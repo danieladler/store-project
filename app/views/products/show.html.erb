@@ -1,0 +1,7 @@
+<h1>Product-specific page for <%= @product.name %></h1>
+
+  <ul>
+    <li><strong>Name:</strong> <%= @product.name %></li>
+    <li><strong>Price:</strong> <%= @product.product_options.first.price_in_cents.round/100 %></li>
+    <br>
+  </ul>

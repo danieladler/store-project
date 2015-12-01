@@ -1,0 +1,11 @@
+<h1>hello!</h1>
+
+<h2>here are some products:</h2>
+
+  <% @products.each do |p| %>
+    <ul>
+      <li><strong>Name:</strong> <%= link_to p.name, show_product_path(p.id) %></li>
+      <li><strong>Price:</strong> <%= p.product_options.first.price_in_cents.round/100 %></li>
+      <br>
+    </ul>
+  <% end %>

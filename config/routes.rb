@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get "/"                                   , to: "products#index"
+  get "/products/:product_id"               , to: "products#show" , as: :show_product
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
