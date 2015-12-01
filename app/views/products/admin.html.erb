@@ -1,0 +1,25 @@
+<h1>Hello, admin. Here are all of your products:</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name          </th>
+        <th>Description   </th>
+        <th>Price         </th>
+        <th>Edit          </th>
+        <th>Delete        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |p| %>
+      <tr>
+        <th><%= p.name %></th>
+        <td><%= p.description %></td>
+        <td> [price] </td>
+        <td> [edit button] </td>
+        <td> [delete button] </td>
+      <% end %>
+    </tbody>
+  </table>
+
+<h3>Add a new product:</h3>

@@ -1,4 +1,4 @@
-<h1>here are some products:</h1>
+<h1>Hello, <%=@current_user.email%>. here are some products:</h1>
 
   <% @products.each do |p| %>
     <ul>
@@ -8,3 +8,5 @@
       <br>
     </ul>
   <% end %>
+
+  <%= link_to "Admin", admin_home_path %>

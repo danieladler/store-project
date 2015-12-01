@@ -4,20 +4,70 @@ body {
   font-family: "Helvetica"
 }
 
-#header {
-  font-size: 40px;
-  margin: 0 auto;
+.header {
   height: 90px;
-  background-color: rgba(0, 0, 0, 0.7)
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-#logo {
-  position: relative;
-  left: 55px;
-  top:   20px;
-}
+  .header-container {
+    margin: 0 auto;
+    width: 800px;
+  }
+
+  .header .logo {
+    font-size: 20px;
+    text-align: center;
+
+    position: relative;
+    display: inline-block;
+    height: 68.66px;
+    width: 68.66px;
+    margin: 10px 0 10px 0;
+    border: 1px solid white;
+  }
+
+  .header .login-container {
+    width: 200px;
+    margin: 10px 0 10px 0;
+
+    position: relative;
+    float: right;
+    display: inline-block;
+
+    font-size: 10px;
+    color: white;
+    border: 1px solid white;
+  }
+
+  .header .signup-container {
+    width: 200px;
+    margin: 10px 0 10px 0;
+
+    position: relative;
+    float: right;
+    display: inline-block;
+
+    font-size: 10px;
+    color: white;
+    border: 1px solid white;
+  }
+
+  .header h4 {
+    font-size: 10px;
+    margin: 0 0;
+  }
+
 
 #content-body {
   width: 800px;
   margin: 0 auto;
+  margin-top: 20px;
+}
+
+table tr, th, td {
+  font-size: 10px;
+}
+
+table th, td {
+  padding-bottom: 10px;
 }

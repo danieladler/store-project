@@ -8,8 +8,36 @@
 </head>
 <body>
 
-  <div id="header">
-    <div id="logo"><%= link_to "home", home_path %></div>
+  <div class="header">
+    <div class="header-container">
+      <div class="logo"><%= link_to "home", home_path %></div>
+      <div class="login-container">
+        <% if @current_user %>
+          <small>Hello, <%= @current_user.email %></small>
+          <%= link_to "Sign Out", "/sign-out" %>
+        <% else %>
+          <%= form_tag "/sign-in" do %>
+            Username
+            <%= text_field_tag :username %>
+            Password
+            <%= password_field_tag :password %>
+
+            <%= submit_tag "Sign in" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class = "signup-container">
+        <h4>Sign Up</h4>
+        <form action="/users" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+          <div>
+            <h4>e-mail address</h4>
+            <input type='text' name="user[email]" />
+          </div>
+          <input type='submit' />
+        </form>
+      </div>
+    </div>
   </div>
 
   <div id="content-body">
