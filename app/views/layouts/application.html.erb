@@ -8,7 +8,13 @@
 </head>
 <body>
 
-<%= yield %>
+  <div id="header">
+    <div id="logo"><%= link_to "home", home_path %></div>
+  </div>
+
+  <div id="content-body">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

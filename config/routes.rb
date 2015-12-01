@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get "/"                                   , to: "products#index"
+  get "/"                                   , to: "products#index", as: :home
   get "/products/:product_id"               , to: "products#show" , as: :show_product
 
 

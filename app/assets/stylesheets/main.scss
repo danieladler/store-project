@@ -1,3 +1,23 @@
 body {
+  margin: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Helvetica"
+}
+
+#header {
+  font-size: 40px;
+  margin: 0 auto;
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.7)
+}
+
+#logo {
+  position: relative;
+  left: 55px;
+  top:   20px;
+}
+
+#content-body {
+  width: 800px;
+  margin: 0 auto;
 }
