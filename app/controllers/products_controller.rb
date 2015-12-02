@@ -13,7 +13,6 @@ class ProductsController < ApplicationController
     @product         = Product.find(params[:product_id])
     @product_options = Product.find(params[:product_id]).product_options.all
     @product_option  = ProductOption.new
-    # raise
   end
 
   def admin
@@ -22,6 +21,13 @@ class ProductsController < ApplicationController
     end
 
     @products       = Product.all
+  end
+
+  def admin_product
+    @product         = Product.find(params[:product_id])
+    @product_options = Product.find(params[:product_id]).product_options.all
+    @product_option  = ProductOption.new
+
   end
 
   def new

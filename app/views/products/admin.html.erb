@@ -21,9 +21,9 @@
           <td><strong>Price:</strong> <%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents.to_f/100.to_f))%></td>
         <% else %>
           <td> Price TBD </td>
-        <% end %>        
+        <% end %>
         <td>
-          <%= link_to "Edit", show_product_path(p.id) %>
+          <%= link_to "Edit", admin_product_path(p.id) %>
         </td>
         <td>
           <form action="/products/<%=p.id%>" method="POST">

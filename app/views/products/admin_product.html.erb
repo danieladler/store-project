@@ -1,0 +1,55 @@
+<div class="welcome">
+  Product edit page for: <span class="greeting"><%=@product.name%></span>
+</div>
+
+
+  <ul>
+    <li><strong>Name:       </strong> <%= @product.name %></li>
+    <li><strong>Description:</strong> <%= @product.description %></li>
+    <li><strong>Image:      </strong> TBD! </li>
+    <li><strong>Options:    </strong></li>
+      <ul>
+        <% @product.product_options.each do |o| %>
+          <li><%= o.name %>: <%= sprintf('%.2f',(o.price_in_cents.to_f/100)) %> </li>
+        <% end %>
+          <li>
+            <h3>Add Product Option:</h3>
+            <%= form_for @product_option do |p| %>
+              <div>
+                <%= p.label      :name %>
+                <%= p.text_field :name %>
+              </div>
+              <div>
+                <%= p.label       :price_in_cents %>
+                <%= p.text_field  :price_in_cents %>
+              </div>
+              <%= p.submit        id: :submit_product_option%>
+            <% end %>
+          </li>
+      </ul>
+  </ul>
+  <br>
+
+  <br>
+  <h3>Edit <%= @product.name %>:</h3>
+  <form action="/products/<%=@product.id%>" method="POST">
+      <input type="hidden" name="authenticity_token"   value="<%= form_authenticity_token %>" />
+      <input type="hidden" name="_method"              value="PATCH">
+      <label for="product[name]">Name:</label>
+      <input type="text"   name="product[name]">
+      <br>
+      <label for="product[description]">Description:</label>
+      <input type="text"   name="product[description]">
+      <input type="submit" value="Update">
+  </form>
+
+  <br>
+
+
+  <br>
+
+  <form action="/products/<%=@product.id%>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
+  </form>
