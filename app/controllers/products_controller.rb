@@ -37,4 +37,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product              = Product.find(params[:product_id])
+    @product.name         = params[:product][:name]
+    @product.description  = params[:product][:description]
+    @product.save
+    redirect_to show_product_path
+  end
+
+  def delete
+    @product       = Product.find(params[:product_id])
+    @product.destroy
+    redirect_to products_path
+  end
+
 end

@@ -7,7 +7,7 @@
     <li><strong>Name:       </strong> <%= @product.name %></li>
     <li><strong>Description:</strong> <%= @product.description %></li>
     <li><strong>Image:      </strong> TBD! </li>
-    <li><strong>Options:</strong></li>
+    <li><strong>Options:    </strong></li>
       <ul>
         <% @product.product_options.each do |o| %>
           <li><%= o.name %>: <%= o.price_in_cents/100 %> </li>
@@ -16,3 +16,22 @@
   </ul>
 
   <br>
+  <h3>Edit <%= @product.name %>:</h3>
+  <form action="/products/<%=@product.id%>" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <input type="hidden" name="_method"            value="PATCH">
+      <input type="text"   name="product[name]"  value=" <%= @product.name %>">
+      <input type="text"   name="product[description]" value=" <%= @product.description %>">
+      <input type="submit" value="Update">
+      <input type='button' value="Cancel" class="cancel">
+  </form>
+
+  <br>
+  <h3>Form to add product options will go here</h3>
+  <br>
+
+  <form action="/products/<%=@product.id%>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
+  </form>

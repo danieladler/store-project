@@ -1,7 +1,8 @@
 body {
-  margin: 0;
+  // margin: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  font-family: "Helvetica"
+  font-family: "Helvetica";
+  font-size: 22px;
 }
 
 body a:visited {
@@ -12,9 +13,9 @@ body a:link {
   color: blue;
 }
 
-input[type=submit] {
-  font-size: 4px;
-}
+// input[type=submit] {
+//   // font-size: 4px;
+// }
 
 .header {
   height: 90px;
@@ -23,7 +24,7 @@ input[type=submit] {
 
   .header-container {
     margin: 0 auto;
-    width: 800px;
+    width: 1140px;
   }
 
   .header .logo {
@@ -44,7 +45,7 @@ input[type=submit] {
   }
 
   .header .login-container {
-    width: 200px;
+    width: 400px;
     height: 68px;
     margin: 10px 0 10px 0;
 
@@ -52,20 +53,19 @@ input[type=submit] {
     float: right;
     display: inline-block;
 
-    font-size: 10px;
-    color: white;
+    
+    font-size: 16px;
     border: 1px solid white;
   }
 
-  .header .login-container form * {
-    margin: 1px 0 1px 0;
+  .header .login-container form {
+
   }
 
   .header .login-container .create-account-link {
-    font-size: 10px;
     position: relative;
     float: right;
-    bottom: 4px;
+    bottom: 12px;
     right: 2px;
   }
 
@@ -84,15 +84,16 @@ input[type=submit] {
   padding: 0 0 10px 10px;
 }
 
-#content-body {
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 20px;
-}
+// #content-body {
+//   width: 800px;
+//   margin: 0 auto;
+//   margin-top: 20px;
+// }
 
 .welcome {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
+  padding: 20px 0 20px 0;
 }
 
 .welcome .greeting {
@@ -101,6 +102,7 @@ input[type=submit] {
 
 .product-starter-list li {
   list-style: none;
+  font-size: 22px;
 }
 
 table {
@@ -117,7 +119,7 @@ table tbody th {
 }
 
 table tr, th, td {
-  font-size: 12px;
+  font-size: 22px;
   text-align: left;
 }
 

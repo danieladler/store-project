@@ -17,10 +17,18 @@
       <tr>
         <th><%= p.name %></th>
         <td><%= p.description %></td>
-        <td><%= p.product_options.find_by(name:"standard price").price_in_cents/100%></td>
+        <td><%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents.to_f/100.to_f))%></td>
+        <td>
+          <%= link_to "Edit", show_product_path(p.id) %>
+        </td>
+        <td>
+          <form action="/products/<%=p.id%>" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
+          </form>
+        </td>
 
-        <td> [edit button] </td>
-        <td> [delete button] </td>
       <% end %>
     </tbody>
   </table>
