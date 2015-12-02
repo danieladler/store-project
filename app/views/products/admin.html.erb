@@ -17,11 +17,12 @@
       <tr>
         <th><%= p.name %></th>
         <td><%= p.description %></td>
-        <td> [price] </td>
+        <td><%= p.product_options.find_by(name:"standard price").price_in_cents/100%></td>
+
         <td> [edit button] </td>
         <td> [delete button] </td>
       <% end %>
     </tbody>
   </table>
 
-<h3>Add a new product:</h3>
+  <%= link_to "Add new product", new_product_path %>

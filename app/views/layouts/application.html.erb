@@ -17,9 +17,9 @@
           <%= link_to "Sign Out", "/sign-out" %>
         <% else %>
           <%= form_tag "/sign-in" do %>
-            Username
+            e-mail
             <%= text_field_tag     :email %>
-            Password
+            password
             <%= password_field_tag :password %>
 
             <%= submit_tag "Sign in" %>

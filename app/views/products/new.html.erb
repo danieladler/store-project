@@ -1,0 +1,19 @@
+<h1>Add a new product:</h1>
+
+<div class="add-product-container">
+  <%= form_for @product do |p| %>
+  <div>
+    <%= p.label      :name %>
+    <%= p.text_field :name %>
+  </div>
+  <div>
+    <%= p.label      :description %>
+    <%= p.text_field :description %>
+  <div>
+    image upload form TBD!
+  </div>
+    <%= p.submit     id: :submit_product%>
+  <% end %>
+
+
+</div>

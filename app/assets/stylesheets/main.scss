@@ -99,10 +99,28 @@ input[type=submit] {
   color: white;
 }
 
+.product-starter-list li {
+  list-style: none;
+}
+
+table {
+  padding: 20px 0 20px 30px;
+}
+
+table thead {
+  text-transform: uppercase;
+  text-align: left;
+}
+
+table tbody th {
+  font-weight: normal;
+}
+
 table tr, th, td {
-  font-size: 10px;
+  font-size: 12px;
+  text-align: left;
 }
 
 table th, td {
-  padding-bottom: 10px;
+  padding: 0 15px 10px 0;
 }

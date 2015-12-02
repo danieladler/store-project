@@ -8,9 +8,10 @@ Rails.application.routes.draw do
 
   get "/"                       , to: "products#index"   , as: :home
   get "/products/:product_id"   , to: "products#show"    , as: :show_product
-  get "/admin/products"         , to: "products#admin"   , as: :admin_home
+  get "/admin/products"         , to: "products#admin"   , as: :products
+  get "/admin/products/new"     , to: "products#new"     , as: :new_product
 
-  post "/"                      , to: "products#add"     , as: :add_product
+  post "/admin/products"         , to: "products#add"   , as: :add_product
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

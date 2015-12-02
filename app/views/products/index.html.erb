@@ -8,12 +8,12 @@
   </div>
 
   <% @products.each do |p| %>
-    <ul>
+    <ul class="product-starter-list">
       <li><strong>Name:</strong> <%= link_to p.name, show_product_path(p.id) %></li>
-      <li><strong>Price:</strong> <%= p.product_options.first.price_in_cents.round/100 %></li>
+      <li><strong>Price:</strong> <%= p.product_options.find_by(name:"standard price").price_in_cents/100%></li>
       <li><strong>Image:</strong> TBD! </li>
       <br>
     </ul>
   <% end %>
 
-  <%= link_to "Admin", admin_home_path %>
+  <%= link_to "Admin", products_path %>

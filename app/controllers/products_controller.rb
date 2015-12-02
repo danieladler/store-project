@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
     end
 
     @products      = Product.all
+    # raise
   end
 
   def show
@@ -17,15 +18,23 @@ class ProductsController < ApplicationController
       @current_user = User.find(session[:user_id])
     end
 
-    @products      = Product.all
+    @products       = Product.all
   end
 
   def new
-
+    @product               = Product.new
   end
 
   def add
-
+    @product               = Product.new
+    @product.name          = params[:product][:name]
+    @product.description   = params[:product][:description]
+    if @product.save
+      redirect_to products_path
+    else
+      @products            = Product.all
+      render :products
+    end
   end
 
 end
