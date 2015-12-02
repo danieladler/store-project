@@ -10,7 +10,12 @@
   <% @products.each do |p| %>
     <ul class="product-starter-list">
       <li><strong>Name:</strong> <%= link_to p.name, show_product_path(p.id) %></li>
-      <li><strong>Price:</strong> <%= p.product_options.find_by(name:"standard price").price_in_cents/100%></li>
+      <% if p.product_options.any? %>
+        <li><strong>Price:</strong> <%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents/100))%></li>
+
+      <% else %>
+        <li> Price TBD </li>
+      <% end %>
       <li><strong>Image:</strong> TBD! </li>
       <br>
     </ul>

@@ -17,7 +17,11 @@
       <tr>
         <th><%= p.name %></th>
         <td><%= p.description %></td>
-        <td><%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents.to_f/100.to_f))%></td>
+        <% if p.product_options.any? %>
+          <td><strong>Price:</strong> <%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents.to_f/100.to_f))%></td>
+        <% else %>
+          <td> Price TBD </td>
+        <% end %>        
         <td>
           <%= link_to "Edit", show_product_path(p.id) %>
         </td>

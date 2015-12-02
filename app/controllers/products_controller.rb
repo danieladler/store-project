@@ -10,7 +10,10 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product       = Product.find(params[:product_id])
+    @product         = Product.find(params[:product_id])
+    @product_options = Product.find(params[:product_id]).product_options.all
+    @product_option  = ProductOption.new
+    # raise
   end
 
   def admin

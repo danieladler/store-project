@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   patch  "/products/:product_id"   , to: "products#edit"    , as: :edit_product
   delete "/products/:product_id"   , to: "products#delete"  , as: :delete_product
 
+  post   "/products/:product_id"   , to: "product_options#add"     , as: :product_options
+  patch  "/products/:product_id"   , to: "product_options#edit"    , as: :edit_option
+  delete "/products/:product_id"   , to: "product_options#delete"  , as: :delete_option
+
   get "/admin/products"         , to: "products#admin"   , as: :products
   get "/admin/products/new"     , to: "products#new"     , as: :new_product
 

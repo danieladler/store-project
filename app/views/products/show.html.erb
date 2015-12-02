@@ -10,24 +10,42 @@
     <li><strong>Options:    </strong></li>
       <ul>
         <% @product.product_options.each do |o| %>
-          <li><%= o.name %>: <%= o.price_in_cents/100 %> </li>
+          <li><%= o.name %>: <%= sprintf('%.2f',(o.price_in_cents.to_f/100)) %> </li>
         <% end %>
+          <li>
+            <h3>Add Product Option:</h3>
+            <%= form_for @product_option do |p| %>
+              <div>
+                <%= p.label      :name %>
+                <%= p.text_field :name %>
+              </div>
+              <div>
+                <%= p.label       :price_in_cents %>
+                <%= p.text_field  :price_in_cents %>
+              </div>
+              <%= p.submit        id: :submit_product_option%>
+            <% end %>
+          </li>
       </ul>
   </ul>
+  <br>
 
   <br>
   <h3>Edit <%= @product.name %>:</h3>
   <form action="/products/<%=@product.id%>" method="POST">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-      <input type="hidden" name="_method"            value="PATCH">
-      <input type="text"   name="product[name]"  value=" <%= @product.name %>">
-      <input type="text"   name="product[description]" value=" <%= @product.description %>">
+      <input type="hidden" name="authenticity_token"   value="<%= form_authenticity_token %>" />
+      <input type="hidden" name="_method"              value="PATCH">
+      <label for="product[name]">Name:</label>
+      <input type="text"   name="product[name]">
+      <br>
+      <label for="product[description]">Description:</label>
+      <input type="text"   name="product[description]">
       <input type="submit" value="Update">
-      <input type='button' value="Cancel" class="cancel">
   </form>
 
   <br>
-  <h3>Form to add product options will go here</h3>
+
+
   <br>
 
   <form action="/products/<%=@product.id%>" method="POST">
