@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
 
+  def new_account
+
+  end
+
   def create
-    @user               = User.new
-    @user.email         = params[:user][:email]
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to home_path
-    end
+    @user               = User.new(params.require(:user).permit(:email, :password, :password_confirmation))
+    @user.save
+    session[:user_id] = @user.id
+    redirect_to home_path
   end
 
   def show

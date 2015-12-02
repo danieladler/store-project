@@ -10,7 +10,7 @@
 
   <div class="header">
     <div class="header-container">
-      <div class="logo"><%= link_to "home", home_path %></div>
+      <div class="logo"><span class="home-link"><%= link_to "home", home_path %></span></div>
       <div class="login-container">
         <% if @current_user %>
           <small>Hello, <%= @current_user.email %></small>
@@ -18,25 +18,22 @@
         <% else %>
           <%= form_tag "/sign-in" do %>
             Username
-            <%= text_field_tag :username %>
+            <%= text_field_tag     :email %>
             Password
             <%= password_field_tag :password %>
 
             <%= submit_tag "Sign in" %>
           <% end %>
+
+          <div class="create-account-link">
+            <%= link_to "Create Account", "/sign-up" %>
+          </div>
         <% end %>
       </div>
-      <div class = "signup-container">
-        <h4>Sign Up</h4>
-        <form action="/users" method="POST">
-          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-          <div>
-            <h4>e-mail address</h4>
-            <input type='text' name="user[email]" />
-          </div>
-          <input type='submit' />
-        </form>
-      </div>
+
+
+
+
     </div>
   </div>
 

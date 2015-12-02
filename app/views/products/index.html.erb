@@ -1,4 +1,11 @@
-<h1>Hello, <%=@current_user.email%>. here are some products:</h1>
+
+  <div class="welcome">
+    <% if @current_user %>
+      Hello, <span class="greeting"><%=@current_user.email%></span>. Here are some products:</h1>
+    <% else %>
+      <span class="greeting">Hello.</span> Here are some products:
+    <% end %>
+  </div>
 
   <% @products.each do |p| %>
     <ul>

@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
 
-  # get "/sign-out", to: "sessions#sign_out", as: :sign_out
-  # post "/sign-in", to: "sessions#sign_in" , as: :sign_in
+  get  "/sign-up"               , to: "users#sign_up"
+  post "/users"                 , to: "users#create"
 
-  get "/"                           , to: "products#index", as: :home
-  get "/products/:product_id"       , to: "products#show" , as: :show_product
-  get "/admin/products"             , to: "products#admin", as: :admin_home
+  post "/sign-in"               , to: "sessions#sign_in" , as: :sign_in
+  get  "/sign-out"              , to: "sessions#sign_out", as: :sign_out
 
-  post "/"                          , to: "products#add", as: :add_product
-  post "/users"                     , to: "users#create"
+  get "/"                       , to: "products#index"   , as: :home
+  get "/products/:product_id"   , to: "products#show"    , as: :show_product
+  get "/admin/products"         , to: "products#admin"   , as: :admin_home
+
+  post "/"                      , to: "products#add"     , as: :add_product
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
