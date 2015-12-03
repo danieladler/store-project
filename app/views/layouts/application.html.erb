@@ -17,6 +17,10 @@
         <% if @current_user %>
           <small>Hello, <%= @current_user.email %></small>
           <%= link_to "Sign Out", "/sign-out" %>
+          <br>
+          <% if @current_user.email != "admin" %>
+            <span class="cart-link"> <%= link_to "my cart", cart_path %></span>
+          <% end %>
 
         <% else %>
           <%= form_tag "/sign-in" do %>

@@ -1,0 +1,7 @@
+<div class="welcome">
+  <% if @current_user %>
+    Hello, <span class="greeting"><%=@current_user.email%></span>. Here is your cart:</h1>
+  <% end %>
+</div>
+
+<span class="checkout-link"> <%= link_to "Checkout" , checkout_path %></span>

@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   delete "/products/:product_id"   , to: "product_options#delete"  , as: :delete_option
 
   get "/admin/orders"              , to: "orders#index"     , as: :orders
-
+  get "/cart"                      , to: "orders#cart"      , as: :cart
+  get "/checkout"                  , to: "orders#checkout"  , as: :checkout
 
 
   # The priority is based upon order of creation: first created -> highest priority.

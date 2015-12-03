@@ -5,4 +5,14 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def cart
+    set_current_user
+
+  end
+
+  def checkout
+    set_current_user
+
+  end
+
 end
