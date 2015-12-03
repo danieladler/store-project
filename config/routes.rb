@@ -6,21 +6,24 @@ Rails.application.routes.draw do
   post "/sign-in"                  , to: "sessions#sign_in" , as: :sign_in
   get  "/sign-out"                 , to: "sessions#sign_out", as: :sign_out
 
-  get  "/"                          , to: "products#index"   , as: :home
-  get  "/admin/products"            , to: "products#admin"   , as: :products
-  get  "/admin/products/new"        , to: "products#new"     , as: :new_product
-  post "/admin/products"            , to: "products#add"     , as: :add_product
-  get  "/admin/products/:product_id", to: "products#admin_product"  , as: :admin_product
-
+  get    "/"                       , to: "products#index"   , as: :home
+  post   "/products"               , to: "products#add"     , as: :add_product
   get    "/products/:product_id"   , to: "products#show"    , as: :show_product
   patch  "/products/:product_id"   , to: "products#edit"    , as: :edit_product
   delete "/products/:product_id"   , to: "products#delete"  , as: :delete_product
+
+  get  "/admin/products"            , to: "admin#index"     , as: :admin_products
+  get  "/admin/products/new"        , to: "admin#new"       , as: :new_product
+  get  "/admin/products/:product_id", to: "admin#edit_view" , as: :edit_view
 
   post   "/products/:product_id"   , to: "product_options#add"     , as: :product_options
   patch  "/products/:product_id"   , to: "product_options#edit"    , as: :edit_option
   delete "/products/:product_id"   , to: "product_options#delete"  , as: :delete_option
 
   get "/admin/orders"              , to: "orders#index"     , as: :orders
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

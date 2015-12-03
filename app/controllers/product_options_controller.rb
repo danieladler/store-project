@@ -6,7 +6,7 @@ class ProductOptionsController < ApplicationController
     @product_option.price_in_cents   = params[:product_option][:price_in_cents]
     @product_option.product_id       = params[:product_id]
     if @product_option.save
-      redirect_to show_product_path
+      redirect_to edit_view_path
     else
       # not sure about this part
       @product_options            = ProductOption.all
@@ -19,14 +19,19 @@ class ProductOptionsController < ApplicationController
     @product_option.name             = params[:product_option][:name]
     @product_option.price_in_cents   = params[:product_option][:price_in_cents]
     @product_option.product_id       = params[:product_option][:product_id]
-    @product_option.save
-    redirect_to show_product_path
+    if @product_option.save
+      redirect_to edit_view_path
+    else
+      # not sure about this part
+      @product_options            = ProductOption.all
+      render :products
+    end
   end
 
   def delete
     @product_option                = ProductOptionfind(params[:product_option_id])
     @product_option.destroy
-    redirect_to products_path
+    redirect_to admin_products_path
   end
 
 end

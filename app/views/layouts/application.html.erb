@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
   <div class="header">
     <div class="header-container">
       <div class="logo"><span class="home-link"><%= link_to "home", home_path %></span></div>
@@ -18,11 +17,7 @@
         <% if @current_user %>
           <small>Hello, <%= @current_user.email %></small>
           <%= link_to "Sign Out", "/sign-out" %>
-          <% if @current_user.email == "admin" %>
-            <div class="admin-container">
-                <%= link_to "Admin Options", products_path %>
-            </div>
-          <% end %>
+
         <% else %>
           <%= form_tag "/sign-in" do %>
             <div class="form-field">
@@ -41,7 +36,6 @@
           </div>
         <% end %>
       </div>
-
     </div>
   </div>
 

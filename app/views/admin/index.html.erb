@@ -1,5 +1,11 @@
 <div class="welcome">
-  Hello, <span class="greeting">admin</span>. Here are all of the products:
+  <div>
+    Hello, <span class="greeting">admin</span>. Here are all of the products:
+  </div>
+
+  <div class="switch-view">
+    Switch to <%= link_to "orders", orders_path %> view
+  </div>
 </div>
 
   <table>
@@ -23,7 +29,7 @@
           <td> Price TBD </td>
         <% end %>
         <td>
-          <%= link_to "Edit", admin_product_path(p.id) %>
+          <%= link_to "Edit", edit_view_path(p.id) %>
         </td>
         <td>
           <form action="/products/<%=p.id%>" method="POST">
@@ -32,7 +38,6 @@
             <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
           </form>
         </td>
-
       <% end %>
     </tbody>
   </table>
