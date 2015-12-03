@@ -11,7 +11,7 @@
 
   <div class="header">
     <div class="header-container">
-      <div class="logo"><span class="home-link"><%= link_to "home", home_path %></span></div>
+      <div class="logo"> <%= link_to image_tag("http://placekitten.com/68/67"), home_path %></div>
 
       <div class="login-container">
         <% if @current_user %>
