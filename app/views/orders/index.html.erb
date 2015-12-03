@@ -1,0 +1,30 @@
+<div class="welcome">
+  Hello, <span class="greeting">admin</span>. Here are all of the orders:
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Created At        </th>
+      <th>User ID           </th>
+      <th>Name              </th>
+      <th>Shipping Address  </th>
+      <th>Items             </th>
+      <th>Total             </th>
+      <th>Status            </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |o| %>
+    <tr>
+      <th><%= o.created_at.localtime.strftime("%m/%d%l:%M%p") %></th>
+      <td><%= o.user_id %></td>
+      <td><%= o.name %></td>
+      <td><%= o.shipping_address %></td>
+      <td><%= o.total %></td>
+      <td> [Order items listed here] </td>
+      <td><%= o.status %></td>
+    <% end %>
+  </tbody>
+</table>

@@ -13,17 +13,26 @@
   <div class="header">
     <div class="header-container">
       <div class="logo"><span class="home-link"><%= link_to "home", home_path %></span></div>
+
       <div class="login-container">
         <% if @current_user %>
           <small>Hello, <%= @current_user.email %></small>
           <%= link_to "Sign Out", "/sign-out" %>
+          <% if @current_user.email == "admin" %>
+            <div class="admin-container">
+                <%= link_to "Admin Options", products_path %>
+            </div>
+          <% end %>
         <% else %>
           <%= form_tag "/sign-in" do %>
-            e-mail
-            <%= text_field_tag     :email %>
-            password
-            <%= password_field_tag :password %>
-
+            <div class="form-field">
+              <label for="email">email</label>
+              <%= text_field_tag     :email %>
+            </div>
+            <div class="form-field">
+              <label for="password">password</label>
+              <%= password_field_tag :password %>
+            </div>
             <%= submit_tag "Sign in" %>
           <% end %>
 
@@ -32,6 +41,7 @@
           </div>
         <% end %>
       </div>
+
     </div>
   </div>
 
