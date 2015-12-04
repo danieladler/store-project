@@ -4,7 +4,7 @@
 
 <ul class="product-attr-list">
   <li class="product-image">
-    <%= image_tag("https://s3-us-west-2.amazonaws.com/store-project/placekitten-product-specific.451-450.jpeg?X-Amz-Date=20151204T215832Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=df18cff8f1e4358220ae196dce3e83d6e6529eaa4f1fefd77acd899aa31d00e7&X-Amz-Credential=ASIAIFVWYYHBPAE4RL3A/20151204/us-west-2/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=AQoDYXdzEDcakAJQEeURTLQbl319P1msNJk%2BX2dY9rjsbO8yg6XS7qTjVLcqaJ0p5kZ38cvUq/aLwxfRIO0doKVRvefhGuVV%2BOYOpMFvjC9L3frqD9usf8tQjsNWLLx9HIPkTIh%2BwfDXBV1Znx7ed%2BsMbZgdKhx5LGwJpFEme6GJIVX%2BelJ%2BF9Em2eyJryObiMrCUM/NrxATb6eH79ZSWQDsucgBL/qeKhtzp5QykvzDRmvPeXj0EEOdMTNG5UXkNUQa5M5QgOK8zAZHvFnjjXgk/UbsP0Z3jPwhwGPYxps4cqthXsoY6S3BZwCFqzLoMY3It/XXqTvElI3xAdymY18agPujzXQdc4aWP3oOUCKi6hfyI/PZu7hwmCDtkoizBQ%3D%3D") %>
+    <%= image_tag(@product.image_url) %>
   </li>
   <li class="product-name"> <%= @product.name %>       </li>
   <li class="product-description"><span class="attr-name">Product Description:</span><br><%= @product.description %></li>

@@ -12,7 +12,7 @@
       <li class="index-product-block">
         <ul class="product-attr-list">
           <li class="product-image">
-            <%= link_to (image_tag("https://s3-us-west-2.amazonaws.com/store-project/placekitten-product-homepage-251-250.jpeg?X-Amz-Date=20151204T215952Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=24eb67b29e24beb4a74042f971877d89d8c83651ca04227d86e15e7c335b1f3d&X-Amz-Credential=ASIAIFVWYYHBPAE4RL3A/20151204/us-west-2/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=AQoDYXdzEDcakAJQEeURTLQbl319P1msNJk%2BX2dY9rjsbO8yg6XS7qTjVLcqaJ0p5kZ38cvUq/aLwxfRIO0doKVRvefhGuVV%2BOYOpMFvjC9L3frqD9usf8tQjsNWLLx9HIPkTIh%2BwfDXBV1Znx7ed%2BsMbZgdKhx5LGwJpFEme6GJIVX%2BelJ%2BF9Em2eyJryObiMrCUM/NrxATb6eH79ZSWQDsucgBL/qeKhtzp5QykvzDRmvPeXj0EEOdMTNG5UXkNUQa5M5QgOK8zAZHvFnjjXgk/UbsP0Z3jPwhwGPYxps4cqthXsoY6S3BZwCFqzLoMY3It/XXqTvElI3xAdymY18agPujzXQdc4aWP3oOUCKi6hfyI/PZu7hwmCDtkoizBQ%3D%3D")), show_product_path(p.id) %>
+            <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/store-project/placekitten-product-homepage-251-250.jpeg"), show_product_path(p.id) %>
           </li>
           <li>Name: <%= link_to p.name, show_product_path(p.id) %></li>
           <% if p.product_options.any? %>
