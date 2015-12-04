@@ -7,16 +7,20 @@
     <% end %>
   </div>
 
-  <% @products.each do |p| %>
-    <ul class="product-starter-list">
-      <li><strong>Name:</strong> <%= link_to p.name, show_product_path(p.id) %></li>
-      <% if p.product_options.any? %>
-        <li><strong>Price:</strong> <%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents/100))%></li>
-
-      <% else %>
-        <li> Price TBD </li>
-      <% end %>
-      <li><strong>Image:</strong> TBD! </li>
-      <br>
-    </ul>
-  <% end %>
+  <ul class = "all-product-list">
+    <% @products.each do |p| %>
+      <li class="index-product-block">
+        <ul class="product-attr-list">
+          <li class="product-image">
+            <%= link_to (image_tag("http://placekitten.com/251/250")), show_product_path(p.id) %>
+          </li>
+          <li>Name: <%= link_to p.name, show_product_path(p.id) %></li>
+          <% if p.product_options.any? %>
+            <li> <%= p.product_options.find_by(name:"standard price").name%>:<%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents/100))%></li>
+          <% else %>
+            <li> Price TBD </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
