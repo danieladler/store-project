@@ -12,7 +12,7 @@
       <li class="index-product-block">
         <ul class="product-attr-list">
           <li class="product-image">
-            <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/store-project/placekitten-product-homepage-251-250.jpeg"), show_product_path(p.id) %>
+            <%= link_to image_tag(p.small_image_url), show_product_path(p.id) %>
           </li>
           <li>Name: <%= link_to p.name, show_product_path(p.id) %></li>
           <% if p.product_options.any? %>
