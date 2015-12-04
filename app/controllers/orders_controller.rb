@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
   def cart
     set_current_user
-
+    @user_orders = @current_user.orders
   end
 
   def checkout

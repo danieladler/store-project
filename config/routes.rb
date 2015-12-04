@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get  "/sign-up"                  , to: "users#sign_up"
   post "/users"                    , to: "users#create"
+  get  "/users/:user_id/account"   , to: "users#show"       , as: :user_account
 
   post "/sign-in"                  , to: "sessions#sign_in" , as: :sign_in
   get  "/sign-out"                 , to: "sessions#sign_out", as: :sign_out
@@ -21,8 +22,8 @@ Rails.application.routes.draw do
   delete "/products/:product_id"   , to: "product_options#delete"  , as: :delete_option
 
   get "/admin/orders"              , to: "orders#index"     , as: :orders
-  get "/cart"                      , to: "orders#cart"      , as: :cart
-  get "/checkout"                  , to: "orders#checkout"  , as: :checkout
+  get "/users/:user_id/cart"       , to: "orders#cart"      , as: :user_cart
+  get "/users/:user_id/checkout"   , to: "orders#checkout"  , as: :checkout
 
 
   # The priority is based upon order of creation: first created -> highest priority.

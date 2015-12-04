@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  def new_account
-
-  end
-
   def create
     @user               = User.new(params.require(:user).permit(:email, :password, :password_confirmation))
     @user.save
@@ -12,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    set_current_user
+    @user_id = @current
   end
 
 end

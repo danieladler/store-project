@@ -1,0 +1,16 @@
+<div class="welcome">
+  <% if @current_user %>
+    Hello, <span class="greeting"><%=@current_user.email%></span>. Here are your account details:</h1>
+  <% end %>
+</div>
+
+<ul>
+  <li>
+    e-mail address: <%= @current_user.email %>
+  </li>
+  <li>
+    account created at: <%= @current_user.created_at %>
+  </li>
+  <li>[order history]</li>
+  <li>[total $ spent]</li>
+</ul>

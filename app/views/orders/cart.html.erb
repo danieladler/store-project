@@ -4,4 +4,16 @@
   <% end %>
 </div>
 
+  <% @user_orders.each do |o| %>
+    <div class="order-block">
+      <strong>order name:</strong><%= o.name %>
+      <br>
+      <strong>total amount: $</strong><%= o.total %>
+      <br>
+      <strong>last modified:</strong> <%= o.updated_at %>
+    </div>
+  <% end %>
+
+  <br>
+
 <span class="checkout-link"> <%= link_to "Checkout" , checkout_path %></span>

@@ -35,11 +35,6 @@ body a:link {
     margin: 10px 0 10px 0;
   }
 
-  .header .logo span {
-    position: relative;
-    top: 20px;
-  }
-
   .header .login-container {
     width: 400px;
     height: 68px;
@@ -103,9 +98,8 @@ body a:link {
   bottom: 5px;
 }
 
-.product-starter-list li {
-  list-style: none;
-  font-size: 22px;
+.product-container-index {
+
 }
 
 table {
