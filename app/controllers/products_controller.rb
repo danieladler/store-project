@@ -37,4 +37,12 @@ class ProductsController < ApplicationController
     redirect_to admin_products_path
   end
 
+  def price
+
+  end
+
+  def formatted_price
+
+  end
+
 end
