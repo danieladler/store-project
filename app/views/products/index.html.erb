@@ -16,7 +16,7 @@
           </li>
           <li>Name: <%= link_to p.name, show_product_path(p.id) %></li>
           <% if p.product_options.any? %>
-            <li> <%= p.product_options.find_by(name:"standard price").name%>:<%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents/100))%></li>
+            <li> <%= p.product_options.find_by(name:"standard price").name%>: $<%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents/100))%></li>
           <% else %>
             <li> Price TBD </li>
           <% end %>

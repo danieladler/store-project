@@ -8,9 +8,10 @@
   </div>
   <div>
     <%= p.label      :description %>
-    <%= p.text_field :description %>
+    <%= p.text_area :description %>
   <div>
-    image upload form TBD!
+    <%= p.label      :image_url %>
+    <%= p.text_field :image_url %>
   </div>
     <%= p.submit     id: :submit_product%>
   <% end %>
