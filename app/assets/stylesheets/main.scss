@@ -59,20 +59,7 @@ body a:link {
     right: 2px;
   }
 
-.signup-container {
-  width: 200px;
-  margin: 10px 0 10px 0;
-  border: 1px solid white;
-}
 
-.signup-container h3 {
-  padding-left: 10px;
-  text-decoration: underline;
-}
-
-.signup-container form {
-  padding: 0 0 10px 10px;
-}
 
 // welcome note at top of each page (below header)
 
@@ -162,4 +149,20 @@ table tr, th, td {
 
 table th, td {
   padding: 0 15px 10px 0;
+}
+
+// sign-up page
+
+.signup-container {
+  max-width: 330px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.signup-container h1 {
+  font-weight: 600;
+}
+
+.signup-form .form-group {
+  margin-bottom: 6px;
 }

@@ -1,22 +1,17 @@
 <div class = "signup-container">
-  <h3>Sign Up</h3>
-  <form action="/users" method="POST">
+  <form action="/users" method="POST" class="signup-form">
+    <h1>Sign Up</h1>
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <div>
-      <h4>e-mail address</h4>
-      <input type='text' name="user[email]" />
+    <div class="form-group email-group">
+      <input type='text' name="user[email]"  class="form-control" placeholder="e-mail address">
+    </div>
+    <div class="form-group pw-group">
+      <input type="password" name="user[password]"  class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group pw-confirm-group">
+      <input type="password" name="user[password_confirmation]" class="form-control" placeholder="Confirm password">
     </div>
 
-    <div>
-    <h4>Password</h4>
-    <input type="password" name="user[password]">
-    </div>
-
-    <div>
-      <h4>Confirm your password</h4>
-      <input type="password" name="user[password_confirmation]">
-    </div>
-
-    <input type='submit' />
+    <button type='submit' class="btn btn-primary btn-block" >Create Account</button>
   </form>
 </div>
