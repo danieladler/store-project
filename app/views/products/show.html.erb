@@ -1,13 +1,16 @@
-<div class="row welcome-container">
-  <div class="col-lg-6 setup">   Learn more about: </div>
-  <div class="col-lg-6 greeting product-name"><%=@product.name%></div>
-</div>
-
 <div class="row product-container">
-  <div class="col-lg-6 product-image-container">
-    <%= image_tag(@product.image_url) %>
+  <div class="col-lg-6 product-left">
+    <span class="col-lg-12 setup">Learn more about:</span>
+
+    <div class="col-lg-12 product-image-container">
+      <%= image_tag(@product.image_url) %>
+    </div>
   </div>
-    <div class="col-lg-6 product-attrs-container">
+
+  <div class="col-lg-6 product-right">
+    <span class="col-lg-12 greeting product-name"><%=@product.name%></span>
+
+    <div class="col-lg-12 product-attrs-container">
       <div class="col-lg-12 product-description-container">
         <span class="attr-name">Product Description:</span>
         <span class="col-lg-12 product-description"><%= @product.description %></span>
@@ -23,7 +26,8 @@
             <% else %>
               <li> Price TBD </li>
             <% end %>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

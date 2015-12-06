@@ -67,17 +67,8 @@ body a:link {
 
 // welcome note at top of each page (below header)
 
-.welcome-container {
-  padding-top: 20px;
-  // padding: 20px 0 30px 0;
-}
-
-.welcome {
-  font-size: 40px;
-}
-
 .setup {
-  font-size: 63px;
+  font-size: 59px;
   font-weight: bold;
 }
 
@@ -89,7 +80,9 @@ body a:link {
 }
 
 .greeting.product-name {
+  padding: 18px 0 10px 12px;
   left: 13px;
+  line-height: 75px;
 }
 
 .welcome .switch-view {
@@ -99,10 +92,6 @@ body a:link {
 }
 
 // display for each product on homepage
-
-.product-container {
-
-}
 
 .all-product-list li.index-product-block {
   list-style-type: none;
@@ -118,6 +107,10 @@ body a:link {
 }
 
 // display of products on product-specific page
+
+.product-container {
+  padding: 30px 0 30px 0;
+}
 
 .product-description-container {
   padding-bottom: 20px;
@@ -141,6 +134,7 @@ body a:link {
 .edit-product-attrs {
   padding-top: 120px;
 }
+
 
 
 // /admin/products table
