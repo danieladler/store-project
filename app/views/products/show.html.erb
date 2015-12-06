@@ -16,18 +16,20 @@
         <span class="col-lg-12 product-description"><%= @product.description %></span>
       </div>
       <div class="col-lg-12 product-options-container">
-        <span class="attr-name">Options:</span>
-        <div class="product-options">
-          <ul>
-            <% if @product.product_options.any? %>
+        <span class="attr-name">Price Options:</span>
+          <% if @product.product_options.any? %>
+            <select class="form-control product-options">
               <% @product.product_options.each do |o| %>
-                <li><%=o.name%>:<%= sprintf('%.2f', (o.price_in_cents/100))%></li>
+              <option><%=o.name%>: $<%= sprintf('%.2f', (o.price_in_cents/100))%></option>
               <% end %>
-            <% else %>
-              <li> Price TBD </li>
-            <% end %>
-          </ul>
-        </div>
+            </select>
+          <% else %>
+            <li> Price TBD </li>
+          <% end %>
+      </div>
+
+      <div class="row">
+        <button class="btn btn-primary btn-block">ADD TO CART</button>
       </div>
     </div>
   </div>
@@ -38,6 +40,6 @@
     <%= link_to "Previous Product", "/products/#{@product.id-1}" %>
   </div>
   <div class="col-lg-6 next-product">
-    <%= link_to "Previous Product", "/products/#{@product.id+1}" %>
+    <%= link_to "Next Product", "/products/#{@product.id+1}" %>
   </div>
 </div>
