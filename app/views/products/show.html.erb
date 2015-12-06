@@ -1,21 +1,30 @@
-<div class="welcome">
-  Product-specific page for: <span class="greeting"><%=@product.name%></span>
+<div class="row welcome-container">
+  <div class="col-lg-6 setup">   Learn more about: </div>
+  <div class="col-lg-6 greeting product-name"><%=@product.name%></div>
 </div>
 
-  <ul class="product-attr-list">
-    <li class="product-image">
-      <%= link_to image_tag(@product.image_url), show_product_path(@product.id) %>
-    </li>
-    <li class="product-name"> <%= @product.name %>       </li>
-    <li class="product-description"><span class="attr-name">Product Description:</span><br><%= @product.description %></li>
-    <li class="product-options"><span class="attr-name">Options:</span>    </li>
-      <ul>
-        <% if @product.product_options.any? %>
-          <% @product.product_options.each do |o| %>
-            <li><%=o.name%>:<%= sprintf('%.2f', (o.price_in_cents/100))%></li>
-          <% end %>
-        <% else %>
-          <li> Price TBD </li>
-        <% end %>
-      </ul>
-  </ul>
+<div class="row product-container">
+  <div class="col-lg-6 product-image-container">
+    <%= image_tag(@product.image_url) %>
+  </div>
+    <div class="col-lg-6 product-attrs-container">
+      <div class="col-lg-12 product-description-container">
+        <span class="attr-name">Product Description:</span>
+        <span class="col-lg-12 product-description"><%= @product.description %></span>
+      </div>
+      <div class="col-lg-12 product-options-container">
+        <span class="attr-name">Options:</span>
+        <div class="product-options">
+          <ul>
+            <% if @product.product_options.any? %>
+              <% @product.product_options.each do |o| %>
+                <li><%=o.name%>:<%= sprintf('%.2f', (o.price_in_cents/100))%></li>
+              <% end %>
+            <% else %>
+              <li> Price TBD </li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,7 @@
+body * {
+  // border: 1px solid yellow;
+}
+
 body {
   // margin: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -63,14 +67,29 @@ body a:link {
 
 // welcome note at top of each page (below header)
 
-.welcome {
-  font-size: 50px;
-  font-weight: bold;
-  padding: 20px 0 30px 0;
+.welcome-container {
+  padding-top: 20px;
+  // padding: 20px 0 30px 0;
 }
 
-.welcome .greeting {
+.welcome {
+  font-size: 40px;
+}
+
+.setup {
+  font-size: 63px;
+  font-weight: bold;
+}
+
+.greeting {
   color: white;
+  font-size: 80px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.greeting.product-name {
+  left: 13px;
 }
 
 .welcome .switch-view {
@@ -81,6 +100,10 @@ body a:link {
 
 // display for each product on homepage
 
+.product-container {
+
+}
+
 .all-product-list li.index-product-block {
   list-style-type: none;
   margin-bottom: 20px;
@@ -90,35 +113,27 @@ body a:link {
   width: 100%;
 }
 
-.product-attr-list li {
-  list-style-type: none;
-}
-
-.product-attr-list li.product-image {
-  float: left;
-  clear: none;
-  padding: 10px 20px 20px 0;
-}
-
 .product-attr-list li:nth-child(2) {
   padding-top: 3px;
 }
 
 // display of products on product-specific page
 
-.product-attr-list .attr-name {
-  font-weight: bold;
-  clear: right;
+.product-description-container {
+  padding-bottom: 20px;
 }
 
-.product-attr-list .product-name {
-  color: black;
+.product-description {
+  padding-left: 0;
+}
+
+.product-options-container {
+  padding: 20px 0 20px 15px;
+}
+
+.attr-name {
   font-weight: bold;
   font-size: 32px;
-}
-
-.product-attr-list .product-description, .product-options {
-  padding-top: 14px;
 }
 
 // product edit page
