@@ -84,7 +84,7 @@ body a:link {
 
 .page-content {
   margin-top: 50px;
-  background-color: rgba(88, 165, 255, 0.4);
+  // background-color: rgba(88, 165, 255, 0.4);
 }
 
 // welcome note at top of each page (below header)
@@ -137,6 +137,7 @@ body a:link {
 
 .index-product-block {
   margin-bottom: 70px;
+  // border: 1px solid rgba(255, 255, 255, 0.40);
 }
 
 .product-details {
@@ -243,6 +244,12 @@ table th, td {
   text-align: center;
   font-size: 32px;
   border: 1px solid white;
+}
+
+// cart page
+
+.order-block {
+  padding: 20px 0 20px 0;
 }
 
 // sign-up page

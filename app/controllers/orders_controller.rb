@@ -7,12 +7,13 @@ class OrdersController < ApplicationController
 
   def cart
     set_current_user
-    @user_orders = @current_user.orders
+    set_current_order
+    # raise
+    # @user_orders = @current_user.orders
   end
 
   def checkout
     set_current_user
-
   end
 
 end
