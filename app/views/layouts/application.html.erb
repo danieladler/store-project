@@ -9,45 +9,64 @@
 </head>
 <body>
 
-  <div class="header">
-    <div class="header-container">
-      <div class="logo"> <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/store-project/placekitten-logo-68-67.jpeg"), home_path %></div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to "BrandName", home_path, class:"navbar-brand" %>
+        </div>
 
-      <div class="login-container">
-        <% if @current_user %>
-          <small>Hello, <%= @current_user.email %></small>
-          <%= link_to "Sign Out", "/sign-out" %>
-          <br>
-          <% if @current_user.email != "admin" %>
-            <span class="cart-link"> <%= link_to "my cart", user_cart_path(session[:user_id]) %></span>
-            <br>
-            <span class="account-link"> <%= link_to "my account", user_account_path(session[:user_id]) %></span>
-          <% end %>
-
-        <% else %>
-          <%= form_tag "/sign-in" do %>
-            <div class="form-field">
-              <label for="email">email</label>
-              <%= text_field_tag     :email %>
+        <div id="navbar" class="navbar-collapse collapse">
+          <!-- <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
             </div>
-            <div class="form-field">
-              <label for="password">password</label>
-              <%= password_field_tag :password %>
-            </div>
-            <%= submit_tag "Sign in" %>
-          <% end %>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form> -->
 
-          <div class="create-account-link">
-            <%= link_to "Create Account", "/sign-up" %>
+          <div class="navbar navbar-nav navbar-right">
+            <% if @current_user %>
+              <ul class="user-links">
+                <li class="user-greeting">Hello, <%= @current_user.email %></li>
+                <% if @current_user.email != "admin" %>
+                  <li>
+                    <span class="cart-link"> <%= link_to "my cart", user_cart_path(session[:user_id]) %></span>
+                  </li>
+                  <li>
+                    <span class="account-link"> <%= link_to "my account", user_account_path(session[:user_id]) %></span>
+                  </li>
+                <% end %>
+                <li><button class="btn"><%= link_to "Sign Out", "/sign-out" %></button></li>
+              </ul>
+            <% else %>
+
+              <ul class="login-forms">
+
+                <li class="navbar-form">
+                  <%= form_tag "/sign-in" do %>
+
+                  <label for="email">email</label>
+                  <%= text_field_tag     :email %>
+
+                  <label for="password">password</label>
+                  <%= password_field_tag :password %>
+
+                  <button class="btn btn-default"><%= submit_tag "Sign in" %></button>
+                </li>
+
+                <% end %>
+
+                <li class="create-account-link">
+                  <%= link_to "Create Account", "/sign-up" %>
+                </li>
+              </ul>
+            <% end %>
           </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+        </div>
+      </nav>
 
-  <div class='container'>
-    <%= yield %>
-  </div>
+    <div class='container page-content'>
+      <%= yield %>
+    </div>
 
 </body>
 </html>
