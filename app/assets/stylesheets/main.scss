@@ -10,11 +10,11 @@ body {
 }
 
 body a:visited {
-  color: blue;
+  color: black;
 }
 
 body a:link {
-  color: blue;
+  color: black;
 }
 
 // header and all its contents
@@ -85,6 +85,21 @@ body a:link {
 .page-content {
   margin-top: 50px;
   // background-color: rgba(88, 165, 255, 0.4);
+}
+
+// footer on each page
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  background-color: rgb(0, 0, 0);
+  padding-top: 60px;
+}
+
+.footer .text-muted {
+  text-align: center;
+  font-size: 14px;
 }
 
 // welcome note at top of each page (below header)
@@ -248,8 +263,24 @@ table th, td {
 
 // cart page
 
-.order-block {
-  padding: 20px 0 20px 0;
+.cart-item-block {
+  border: 1px solid white;
+  margin: 10px 0;
+  padding: 30px 0;
+  font-size: 28px;
+}
+
+.cart-item-block li {
+  list-style-type: none;
+}
+
+.cart-item-block li:nth-child(2) {
+  font-weight: 600;
+}
+
+.cart-item-image img {
+  position: relative;
+  width: 100%;
 }
 
 // sign-up page

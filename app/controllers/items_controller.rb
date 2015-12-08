@@ -4,12 +4,10 @@ class ItemsController < ApplicationController
     set_current_user
     set_current_order
     @item                   = Item.new
-    # set other Item attributes via params or form
-    # @item.product_option_id = params[]??
-    # @item.price             = params[:price]
+    @item.product_option_id = params[:selector]
+    @item.price             = @item.product_option.price_in_cents
     @item.order_id          = session[:order_id]
-    # @selected_product_options = params[:selector]
-    # raise
+    @item.quantity          = 1
     @item.save
     redirect_to user_cart_path(session[:user_id])
   end
