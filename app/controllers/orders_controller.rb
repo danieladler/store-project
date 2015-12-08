@@ -8,8 +8,6 @@ class OrdersController < ApplicationController
   def cart
     set_current_user
     set_current_order
-    # raise
-    # @user_orders = @current_user.orders
   end
 
   def checkout
