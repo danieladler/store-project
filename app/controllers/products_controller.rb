@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     set_current_user
-
+    set_current_order
     if @current_user
       if @current_user.email == "admin"
         redirect_to admin_products_path
@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
     end
 
     @products      = Product.all
+    # raise
   end
 
   def show

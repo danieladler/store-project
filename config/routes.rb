@@ -26,7 +26,8 @@ Rails.application.routes.draw do
   get "/users/:user_id/checkout"   , to: "orders#checkout"   , as: :checkout
   post "/orders"                   , to: "orders#create"     , as: :new_order
 
-  post "/items"                    , to: "items#add_to_cart" , as: :new_item
+  post "/items"                    , to: "items#add_to_cart"     , as: :new_item
+  delete "/items/:item_id"         , to: "items#remove_from_cart", as: :delete_item
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

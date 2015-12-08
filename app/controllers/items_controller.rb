@@ -12,4 +12,10 @@ class ItemsController < ApplicationController
     redirect_to user_cart_path(session[:user_id])
   end
 
+  def remove_from_cart
+    @item = Item.find(params[:item_id])
+    @item.destroy
+    redirect_to user_cart_path(session[:user_id])
+  end
+
 end
