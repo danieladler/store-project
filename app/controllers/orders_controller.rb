@@ -20,11 +20,13 @@ class OrdersController < ApplicationController
   def finish_checkout
     set_current_order
     set_current_user
-    # @current_order.status
+    @current_order.user_id          = session[:user_id]
     @current_order.name             = params[:order][:name]
     @current_order.shipping_address = params[:order][:shipping_address]
-    # raise
+    @current_order.status           = "complete"
     @current_order.save
+    session.delete(:order_id)
+    # raise
     redirect_to order_confirm_path
   end
 

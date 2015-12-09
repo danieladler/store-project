@@ -9,7 +9,11 @@ class ItemsController < ApplicationController
     @item.order_id          = session[:order_id]
     @item.quantity          = 1
     @item.save
-    redirect_to user_cart_path(session[:user_id])
+    if session[:user_id]
+      redirect_to user_cart_path(session[:user_id])
+    else
+      redirect_to home_path
+    end
   end
 
   def remove_from_cart

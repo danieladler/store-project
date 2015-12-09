@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
       @current_order = Order.find(session[:order_id])
     else
       @current_order               = Order.new
-      @current_order.user_id       = session[:user_id]
+      @current_order.status        = "browsing"
       @current_order.save
       session[:order_id] = @current_order.id
     end

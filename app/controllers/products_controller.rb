@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
 
   def show
     set_current_user
+    set_current_order
     @product         = Product.find(params[:product_id])
     @product_options = Product.find(params[:product_id]).product_options.all
     @product_option  = ProductOption.new

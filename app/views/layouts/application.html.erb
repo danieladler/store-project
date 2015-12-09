@@ -29,7 +29,7 @@
                 <li class="user-greeting">Hello, <%= @current_user.email %></li>
                 <% if @current_user.email != "admin" %>
                   <li>
-                    <span class="cart-link"> <%= link_to  "my cart (#{@current_user.items.count})", user_cart_path(session[:user_id]) %></span>
+                    <span class="cart-link"> <%= link_to  "my cart (#{@current_order.items.count})", user_cart_path(session[:user_id]) %></span>
                   </li>
                   <li>
                     <span class="account-link"> <%= link_to "my account", user_account_path(session[:user_id]) %></span>
@@ -68,11 +68,11 @@
       <%= yield %>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">footer content will go here</p>
-      </div>
-    </footer>
+      <!-- <footer class="footer">
+        <div class="container">
+          <p class="text-muted">footer content will go here</p>
+        </div>
+      </footer> -->
 
 </body>
 </html>
