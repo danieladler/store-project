@@ -12,6 +12,25 @@ class OrdersController < ApplicationController
 
   def checkout
     set_current_user
+    set_current_order
+    @current_order.total = @current_order.calculate_total
+    @current_order.save
   end
+
+  def finish_checkout
+    set_current_order
+    set_current_user
+    # @current_order.status
+    @current_order.name             = params[:order][:name]
+    @current_order.shipping_address = params[:order][:shipping_address]
+    # raise
+    @current_order.save
+    redirect_to order_confirm_path
+  end
+
+  def confirm
+
+  end
+
 
 end

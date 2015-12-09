@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
     else
       @current_order               = Order.new
       @current_order.user_id       = session[:user_id]
-      # set other order attributes via params or form
       @current_order.save
       session[:order_id] = @current_order.id
     end
