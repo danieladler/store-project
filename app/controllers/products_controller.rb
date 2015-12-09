@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
     end
 
     @products      = Product.all
-    # raise
   end
 
   def show
@@ -19,7 +18,6 @@ class ProductsController < ApplicationController
     @product         = Product.find(params[:product_id])
     @product_options = Product.find(params[:product_id]).product_options.all
     @product_option  = ProductOption.new
-    # raise
   end
 
   def add

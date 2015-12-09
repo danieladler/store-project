@@ -21,12 +21,12 @@ Rails.application.routes.draw do
   patch  "/products/:product_id"   , to: "product_options#edit"    , as: :edit_option
   delete "/products/:product_id"   , to: "product_options#delete"  , as: :delete_option
 
-  get "/admin/orders"              , to: "orders#index"      , as: :orders
-  get "/users/:user_id/cart"       , to: "orders#cart"       , as: :user_cart
-  get "/users/:user_id/checkout"   , to: "orders#checkout"   , as: :checkout
-  post "/orders"                   , to: "orders#create"     , as: :new_order
-  patch  "/orders/:order_id"       , to: "orders#finish_checkout"  , as: :finish_checkout
-  get "/orders/confirmation"       , to: "orders#confirm"     , as: :order_confirm
+  get "/admin/orders"                  , to: "orders#index"      , as: :orders
+  get "/users/:user_id/cart"           , to: "orders#cart"       , as: :user_cart
+  get "/users/:user_id/checkout"       , to: "orders#checkout"   , as: :checkout
+  post "/orders/"                      , to: "orders#create"     , as: :new_order
+  patch  "/orders/:order_id"           , to: "orders#finish_checkout"  , as: :finish_checkout
+  get "/orders/:order_id/"             , to: "orders#confirm"     , as: :order_confirm
 
   post "/items"                    , to: "items#add_to_cart"     , as: :new_item
   delete "/items/:item_id"         , to: "items#remove_from_cart", as: :delete_item

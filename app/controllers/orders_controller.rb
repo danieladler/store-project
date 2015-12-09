@@ -27,11 +27,11 @@ class OrdersController < ApplicationController
     @current_order.save
     session.delete(:order_id)
     # raise
-    redirect_to order_confirm_path
+    redirect_to order_confirm_path(params[:order_id])
   end
 
   def confirm
-
+    @current_order = Order.find(params[:order_id])
   end
 
 
