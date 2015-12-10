@@ -31,8 +31,7 @@ class OrdersController < ApplicationController
 
   def confirm
     set_current_user
-    set_current_order
-    @current_order = Order.find(params[:order_id])
+    @complete_order = Order.find(params[:order_id])
   end
 
 
