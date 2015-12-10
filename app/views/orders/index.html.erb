@@ -21,12 +21,18 @@
     <% @orders.sort.reverse.each do |o| %>
       <tr>
         <th><%= o.updated_at.localtime.strftime("%m/%d %y, %l:%M%p") %></th>
-        <td><strong><%= link_to o.id %></strong></td>
+        <td><strong><%= link_to o.id, order_confirm_path(o.id) %></strong></td>
         <td><%= o.name %></td>
         <td><%= o.shipping_address %></td>
         <td>$<%= sprintf('%.2f', (o.total/100)) %></td>
         <td><%= o.status %></td>
-        <td> [shipped checkbox] </td>
+        <td>
+          <form action="/admin/orders/<%=o.id%>/ship-confirm" method="POST">
+              <input type="hidden" name="authenticity_token"   value="<%= form_authenticity_token %>" />
+              <input type="hidden" name="_method"              value="PATCH">
+              <button class="btn btn-success btn-md" type="submit">Confirm Shipped</button>
+          </form>
+        </td>
       </tr>
     <% end %>
   </tbody>

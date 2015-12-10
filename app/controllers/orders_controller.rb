@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
     @current_order.user_id          = session[:user_id]
     @current_order.name             = params[:order][:name]
     @current_order.shipping_address = params[:order][:shipping_address]
-    @current_order.status           = "complete"
+    @current_order.status           = "paid"
     @current_order.save
     session.delete(:order_id)
     redirect_to order_confirm_path(params[:order_id])
@@ -32,6 +32,13 @@ class OrdersController < ApplicationController
   def confirm
     set_current_user
     @complete_order = Order.find(params[:order_id])
+  end
+
+  def ship_confirm
+    @current_order = Order.find(params[:order_id])
+    @current_order.status           = "shipped"
+    @current_order.save
+    redirect_to orders_path
   end
 
 
