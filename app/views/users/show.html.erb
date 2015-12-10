@@ -9,8 +9,12 @@
     e-mail address: <%= @current_user.email %>
   </li>
   <li>
-    account created at: <%= @current_user.created_at %>
+    account created at: <%= @current_user.created_at.localtime.strftime("%B %e, %Y %I:%M:%S %p %Z") %>
   </li>
-  <li>[order history]</li>
-  <li>[total $ spent]</li>
+  <li>Order history:</li>
+    <% @current_user.orders.sort.each do |o| %>
+    <ul>
+      <li> <%= link_to "#{o.purchased_date}, #{o.purchased_time}", order_confirm_path(o.id) %> </li>
+    </ul>
+    <% end %>
 </ul>

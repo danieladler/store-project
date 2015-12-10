@@ -26,11 +26,12 @@ class OrdersController < ApplicationController
     @current_order.status           = "complete"
     @current_order.save
     session.delete(:order_id)
-    # raise
     redirect_to order_confirm_path(params[:order_id])
   end
 
   def confirm
+    set_current_user
+    set_current_order
     @current_order = Order.find(params[:order_id])
   end
 

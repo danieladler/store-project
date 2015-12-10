@@ -1,6 +1,12 @@
-<h1>Your order has been placed!</h1>
+<% if flash[:notice] %>
+  <div class='alert alert-success'>
+    <%= flash[:notice] %>
+  </div>
+<% else %>
+  <h1>Order History:</h1>
+<% end %>
 
-<h2>On <%= @current_order.updated_at %> you purchased:</h2>
+<h4>On <%= @current_order.purchased_date %> at <%= @current_order.purchased_time %> you purchased:</h4>
   <div class="row">
     <% @current_order.items.each do |i| %>
       <ul class="col-lg-10 col-lg-push-1 cart-item-block">

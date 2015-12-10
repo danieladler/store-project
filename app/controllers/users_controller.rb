@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     set_current_user
-    @user_id = @current
+    set_current_order
   end
 
 end

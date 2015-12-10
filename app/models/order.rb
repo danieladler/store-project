@@ -11,4 +11,12 @@ class Order < ActiveRecord::Base
     total_order_cost
   end
 
+  def purchased_date
+    self.updated_at.localtime.strftime("%B %e, %Y")
+  end
+
+  def purchased_time
+    self.updated_at.localtime.strftime("%I:%M:%S %p %Z")
+  end
+
 end
