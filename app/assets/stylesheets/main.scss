@@ -20,7 +20,7 @@ body a:link {
 // page backgrounds
 
 .bkgd-wrapper-product-index-1 {
-  
+
 }
 
 // this pushes page content down to fit below fixed header.
@@ -46,7 +46,6 @@ body a:link {
 .navbar-brand {
   font-size: 24px;
   font-weight: 600;
-  padding: 12px 0 12px 15px;
 }
 
   .header .logo {
@@ -118,36 +117,23 @@ body a:link {
 
 // display for all products on homepage
 
-.all-product-list * {
-  // padding-left: 0;
-}
-
-.all-product-list:first-child {
-  // padding-left: 15px;
-}
-
 .index-product-block {
-  margin-bottom: 70px;
-  // border: 1px solid rgba(255, 255, 255, 0.40);
+  margin-bottom: 20px;
 }
 
-.product-image {
-  padding-right: 0;
+.index-product-block img {
+  width: 100%;
 }
 
-.product-details {
-  padding-left: 0;
-  padding-right: 15px;
-  font-size: 30px;
+.index-product-details {
+  position: relative;
+  top: -31px;
+  left: 2px;
 }
 
 .product-name {
-  padding-top: 6px;
   font-weight: 600;
-}
-
-.product-options {
-  padding-top: 12px;
+  margin-top: 0;
 }
 
 // display of products on product-specific page
