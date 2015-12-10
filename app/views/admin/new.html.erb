@@ -1,18 +1,20 @@
-<h1>Add a new product:</h1>
+<div class='container page-content'>
+  <h1>Add a new product:</h1>
 
-<div class="add-product-container">
-  <%= form_for @product, url: add_product_path do |p| %>
-  <div>
-    <%= p.label      :name %>
-    <%= p.text_field :name %>
+  <div class="add-product-container">
+    <%= form_for @product, url: add_product_path do |p| %>
+    <div>
+      <%= p.label      :name %>
+      <%= p.text_field :name %>
+    </div>
+    <div>
+      <%= p.label     :description %>
+      <%= p.text_area :description %>
+    <div>
+      <%= p.label      :image_url %>
+      <%= p.text_field :image_url %>
+    </div>
+      <%= p.submit     id: :submit_product%>
+    <% end %>
   </div>
-  <div>
-    <%= p.label     :description %>
-    <%= p.text_area :description %>
-  <div>
-    <%= p.label      :image_url %>
-    <%= p.text_field :image_url %>
-  </div>
-    <%= p.submit     id: :submit_product%>
-  <% end %>
 </div>

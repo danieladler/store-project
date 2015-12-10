@@ -1,53 +1,55 @@
-<div class="row product-container">
-  <div class="col-lg-6 product-left">
-    <span class="col-lg-12 setup">Learn more about:</span>
+<div class='container page-content'>
+  <div class="row product-container">
+    <div class="col-lg-6 product-left">
+      <span class="col-lg-12 setup">Learn more about:</span>
 
-    <div class="col-lg-12 product-image-container">
-      <%= image_tag(@product.image_url) %>
-    </div>
-  </div>
-
-  <div class="col-lg-6 product-right">
-    <span class="col-lg-12 greeting product-name"><%=@product.name%></span>
-
-    <div class="col-lg-12 product-attrs-container">
-      <div class="col-lg-12 product-description-container">
-        <span class="attr-name">Product Description:</span>
-        <span class="col-lg-12 product-description"><%= @product.description %></span>
-      </div>
-      <div class="col-lg-12 product-options-container">
-        <span class="attr-name">Price Options:</span>
-          <% if @product.product_options.any? %>
-
-            <form action="/items" method="POST">
-              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-              <select class="form-control product-options" name="selector">
-                <% @product.product_options.each do |o| %>
-                  <option value="<%=o.id%>"><%=o.name%>: $<%= sprintf('%.2f', (o.price_in_cents/100))%></option>
-                <% end %>
-              </select>
-
-              <button type='submit' class="col-lg-12 btn btn-primary btn-block add-to-cart" >ADD TO CART</button>
-            </form>
-
-          <% else %>
-            <li> Price TBD </li>
-          <% end %>
+      <div class="col-lg-12 product-image-container">
+        <%= image_tag(@product.image_url) %>
       </div>
     </div>
-    <div class="row">
+
+    <div class="col-lg-6 product-right">
+      <span class="col-lg-12 greeting product-name"><%=@product.name%></span>
+
+      <div class="col-lg-12 product-attrs-container">
+        <div class="col-lg-12 product-description-container">
+          <span class="attr-name">Product Description:</span>
+          <span class="col-lg-12 product-description"><%= @product.description %></span>
+        </div>
+        <div class="col-lg-12 product-options-container">
+          <span class="attr-name">Price Options:</span>
+            <% if @product.product_options.any? %>
+
+              <form action="/items" method="POST">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                <select class="form-control product-options" name="selector">
+                  <% @product.product_options.each do |o| %>
+                    <option value="<%=o.id%>"><%=o.name%>: $<%= sprintf('%.2f', (o.price_in_cents/100))%></option>
+                  <% end %>
+                </select>
+
+                <button type='submit' class="col-lg-12 btn btn-primary btn-block add-to-cart" >ADD TO CART</button>
+              </form>
+
+            <% else %>
+              <li> Price TBD </li>
+            <% end %>
+        </div>
+      </div>
+      <div class="row">
 
 
 
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row prev-next-product">
-  <div class="col-lg-6 prev-product">
-    <%= link_to "Previous Product", "/products/#{@product.id-1}" %>
-  </div>
-  <div class="col-lg-6 next-product">
-    <%= link_to "Next Product", "/products/#{@product.id+1}" %>
+  <div class="row prev-next-product">
+    <div class="col-lg-6 prev-product">
+      <%= link_to "Previous Product", "/products/#{@product.id-1}" %>
+    </div>
+    <div class="col-lg-6 next-product">
+      <%= link_to "Next Product", "/products/#{@product.id+1}" %>
+    </div>
   </div>
 </div>

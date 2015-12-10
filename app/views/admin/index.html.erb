@@ -1,47 +1,50 @@
-<div class="row">
-  <div class="col-lg-12 welcome">
-      Hello, <span class="user-name">admin</span>. Here are all products:
+<div class='container page-content'>
+  <div class="row">
+    <div class="col-lg-12 welcome">
+        Hello, <span class="user-name">admin</span>. Here are all products:
+    </div>
   </div>
-</div>
 
-<div class="row table-container">
-  <table class="all-products">
-    <thead>
-      <tr>
-        <th>Name          </th>
-        <th>Description   </th>
-        <th>Price         </th>
-        <th>Edit          </th>
-        <th>Delete        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |p| %>
-      <tr>
-        <th><%= p.name %></th>
-        <td><%= p.description %></td>
-        <% if p.product_options.any? %>
-          <td><strong>Price:</strong> <%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents.to_f/100.to_f))%></td>
-        <% else %>
-          <td> Price TBD </td>
+  <div class="row table-container">
+    <table class="all-products">
+      <thead>
+        <tr>
+          <th>Name          </th>
+          <th>Description   </th>
+          <th>Price         </th>
+          <th>Edit          </th>
+          <th>Delete        </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |p| %>
+          <tr>
+            <th><%= p.name %></th>
+            <td><%= p.description %></td>
+            <% if p.product_options.any? %>
+              <td><strong>Price:</strong> <%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents.to_f/100.to_f))%></td>
+            <% else %>
+              <td> Price TBD </td>
+            <% end %>
+            <td>
+              <%= link_to "Edit", edit_view_path(p.id) %>
+            </td>
+            <td>
+              <form action="/products/<%=p.id%>" method="POST">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
+              </form>
+            </td>
+          </tr>
         <% end %>
-        <td>
-          <%= link_to "Edit", edit_view_path(p.id) %>
-        </td>
-        <td>
-          <form action="/products/<%=p.id%>" method="POST">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
-          </form>
-        </td>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </tbody>
+    </table>
+  </div>
 
-<div class="row">
-  <div col-lg-12 class="add-product">
-    <%= link_to "Add new product", new_product_path %>
+  <div class="row">
+    <div col-lg-12 class="add-product">
+      <%= link_to "Add new product", new_product_path %>
+    </div>
   </div>
 </div>

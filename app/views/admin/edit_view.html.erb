@@ -1,76 +1,79 @@
-<div class="row product-container">
-  <div class="col-lg-6 product-left">
-    <span class="col-lg-12 setup">Edit page for:</span>
+<div class='container page-content'>
 
-    <div class="col-lg-12 product-image-container">
-      <%= image_tag(@product.image_url) %>
+  <div class="row product-container">
+    <div class="col-lg-6 product-left">
+      <span class="col-lg-12 setup">Edit page for:</span>
+
+      <div class="col-lg-12 product-image-container">
+        <%= image_tag(@product.image_url) %>
+      </div>
     </div>
-  </div>
 
-  <div class="col-lg-6 product-right">
-      <span class="col-lg-12 greeting product-name"><%=@product.name%></span>
+    <div class="col-lg-6 product-right">
+        <span class="col-lg-12 greeting product-name"><%=@product.name%></span>
 
-      <div class="col-lg-12 product-attrs-container">
-        <div class="col-lg-12 product-description-container">
-          <span class="attr-name">Product Description:</span>
-          <span class="col-lg-12 product-description"><%= @product.description %></span>
-        </div>
-        <div class="col-lg-12 product-options-container">
-          <span class="attr-name">Options:</span>
-          <div class="product-options">
-            <ul>
-              <% if @product.product_options.any? %>
-                <% @product.product_options.each do |o| %>
-                  <li><%=o.name%>:<%= sprintf('%.2f', (o.price_in_cents/100))%></li>
-                <% end %>
-              <% else %>
-                <li> Price TBD </li>
-              <% end %>
-              <li class="add-option-toggler">Click to add product option</li>
-                <div class="add-option-form">
-                  <%= form_for @product_option do |p| %>
-                    <div>
-                      <%= p.label      :name %>
-                      <%= p.text_field :name %>
-                    </div>
-                    <div>
-                      <%= p.label       :price_in_cents %>
-                      <%= p.text_field  :price_in_cents %>
-                    </div>
-                    <%= p.submit        id: :submit_product_option%>
+        <div class="col-lg-12 product-attrs-container">
+          <div class="col-lg-12 product-description-container">
+            <span class="attr-name">Product Description:</span>
+            <span class="col-lg-12 product-description"><%= @product.description %></span>
+          </div>
+          <div class="col-lg-12 product-options-container">
+            <span class="attr-name">Options:</span>
+            <div class="product-options">
+              <ul>
+                <% if @product.product_options.any? %>
+                  <% @product.product_options.each do |o| %>
+                    <li><%=o.name%>:<%= sprintf('%.2f', (o.price_in_cents/100))%></li>
                   <% end %>
-                </div>
-              </ul>
+                <% else %>
+                  <li> Price TBD </li>
+                <% end %>
+                <li class="add-option-toggler">Click to add product option</li>
+                  <div class="add-option-form">
+                    <%= form_for @product_option do |p| %>
+                      <div>
+                        <%= p.label      :name %>
+                        <%= p.text_field :name %>
+                      </div>
+                      <div>
+                        <%= p.label       :price_in_cents %>
+                        <%= p.text_field  :price_in_cents %>
+                      </div>
+                      <%= p.submit        id: :submit_product_option%>
+                    <% end %>
+                  </div>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-</div>
+  </div>
 
-<div class="col-lg-12 edit-container">
-<div class="col-lg-6 edit-product-attrs">
-  <h3>Edit <%= @product.name %>:</h3>
-  <form action="/products/<%=@product.id%>" method="POST">
-      <input type="hidden" name="authenticity_token"   value="<%= form_authenticity_token %>" />
-      <input type="hidden" name="_method"              value="PATCH">
-      <label for="product[name]">Name:</label>
-      <input type="text"   name="product[name]", value="<%=@product.name%>">
-      <br>
-      <label for="product[description]">Description:</label>
-      <input type="text"   name="product[description]", value="<%= @product.description%>">
-      <br>
-      <label for="product[image_url]">Image URL:</label>
-      <input type="text"   name="product[image_url]", value="<%=@product.image_url%>">
-      <input type="submit" value="Update">
-  </form>
-</div>
+  <div class="col-lg-12 edit-container">
+    <div class="col-lg-6 edit-product-attrs">
+      <h3>Edit <%= @product.name %>:</h3>
+      <form action="/products/<%=@product.id%>" method="POST">
+          <input type="hidden" name="authenticity_token"   value="<%= form_authenticity_token %>" />
+          <input type="hidden" name="_method"              value="PATCH">
+          <label for="product[name]">Name:</label>
+          <input type="text"   name="product[name]", value="<%=@product.name%>">
+          <br>
+          <label for="product[description]">Description:</label>
+          <input type="text"   name="product[description]", value="<%= @product.description%>">
+          <br>
+          <label for="product[image_url]">Image URL:</label>
+          <input type="text"   name="product[image_url]", value="<%=@product.image_url%>">
+          <input type="submit" value="Update">
+      </form>
+    </div>
 
-<div class="col-lg-6 delete-product">
-  <h3>Delete this product: </h3>
-  <form action="/products/<%=@product.id%>" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
-  </form>
-</div>
+    <div class="col-lg-6 delete-product">
+      <h3>Delete this product: </h3>
+      <form action="/products/<%=@product.id%>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
+      </form>
+    </div>
+  </div>
 </div>

@@ -1,20 +1,22 @@
-<div class = "signup-container">
-  <form action="/users" method="POST" class="signup-form">
-    <h1>Sign Up</h1>
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <div class="form-group username-group">
-      <input type='text' name="user[username]"  class="form-control" placeholder="username">
-    </div>
-    <div class="form-group email-group">
-      <input type='text' name="user[email]"  class="form-control" placeholder="e-mail address">
-    </div>
-    <div class="form-group pw-group">
-      <input type="password" name="user[password]"  class="form-control" placeholder="Password">
-    </div>
-    <div class="form-group pw-confirm-group">
-      <input type="password" name="user[password_confirmation]" class="form-control" placeholder="Confirm password">
-    </div>
+<div class='container page-content'>
+  <div class = "signup-container">
+    <form action="/users" method="POST" class="signup-form">
+      <h1>Sign Up</h1>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <div class="form-group username-group">
+        <input type='text' name="user[username]"  class="form-control" placeholder="username">
+      </div>
+      <div class="form-group email-group">
+        <input type='text' name="user[email]"  class="form-control" placeholder="e-mail address">
+      </div>
+      <div class="form-group pw-group">
+        <input type="password" name="user[password]"  class="form-control" placeholder="Password">
+      </div>
+      <div class="form-group pw-confirm-group">
+        <input type="password" name="user[password_confirmation]" class="form-control" placeholder="Confirm password">
+      </div>
 
-    <button type='submit' class="btn btn-primary btn-block" >Create Account</button>
-  </form>
+      <button type='submit' class="btn btn-primary btn-block" >Create Account</button>
+    </form>
+  </div>
 </div>
