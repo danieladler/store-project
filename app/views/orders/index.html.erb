@@ -4,29 +4,30 @@
   </div>
 </div>
 
-<table>
+<table class="all-orders">
   <thead>
     <tr>
-      <th>Created At        </th>
-      <th>User ID           </th>
+      <th>Completed at      </th>
+      <th>Order ID           </th>
       <th>Name              </th>
       <th>Shipping Address  </th>
-      <th>Items             </th>
       <th>Total             </th>
       <th>Status            </th>
+      <th>Shipped            </th>
     </tr>
   </thead>
 
   <tbody>
-    <% @orders.each do |o| %>
-    <tr>
-      <th><%= o.created_at.localtime.strftime("%m/%d%l:%M%p") %></th>
-      <td><%= o.user_id %></td>
-      <td><%= o.name %></td>
-      <td><%= o.shipping_address %></td>
-      <td><%= o.total %></td>
-      <td> [Order items listed here] </td>
-      <td><%= o.status %></td>
+    <% @orders.sort.reverse.each do |o| %>
+      <tr>
+        <th><%= o.updated_at.localtime.strftime("%m/%d %y, %l:%M%p") %></th>
+        <td><strong><%= link_to o.id %></strong></td>
+        <td><%= o.name %></td>
+        <td><%= o.shipping_address %></td>
+        <td>$<%= sprintf('%.2f', (o.total/100)) %></td>
+        <td><%= o.status %></td>
+        <td> [shipped checkbox] </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
