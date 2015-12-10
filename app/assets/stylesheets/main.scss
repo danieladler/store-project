@@ -17,6 +17,13 @@ body a:link {
   color: black;
 }
 
+// this pushes page content down to fit below fixed header.
+
+.page-content {
+  margin-top: 50px;
+  // background-color: rgba(88, 165, 255, 0.4);
+}
+
 // header and all its contents
 
 .navbar-default {
@@ -38,54 +45,17 @@ body a:link {
     // margin: 10px 0 10px 0;
   }
 
-  .user-greeting {
-    font-size: 22px;
+  .create-account a:link {
     color: white;
   }
 
-  .user-links>li  {
-    float: left;
-    list-style-type: none;
-    padding-right: 26px;
+  .create-account a:visited {
+    color: white;
   }
 
-  .login-forms>li {
-    float: left;
-    list-style-type: none;
-    padding-right: 12px;
+  .sign-out {
+    margin-top: 8px;
   }
-
-  // .header .login-container {
-  //   width: 400px;
-  //   height: 68px;
-  //   margin: 10px 0 10px 0;
-  //
-  //   position: relative;
-  //   float: right;
-  //   display: inline-block;
-  //
-  //   font-size: 16px;
-  //   border: 1px solid white;
-  // }
-  //
-  // .header .login-container .form-field {
-  //   float: left;
-  //   clear: right;
-  // }
-  //
-  // .header .login-container .create-account-link {
-  //   position: relative;
-  //   float: right;
-  //   bottom: 12px;
-  //   right: 2px;
-  // }
-
-//
-
-.page-content {
-  margin-top: 50px;
-  // background-color: rgba(88, 165, 255, 0.4);
-}
 
 // footer on each page
 
