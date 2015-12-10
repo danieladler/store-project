@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-12 welcome">
     <% if @current_user %>
-      Hello, <span class="user-name"><%=@current_user.email%></span>. Here are some products:
+      Hello, <span class="user-name"><%=@current_user.username%></span>. Here are some products:
     <% else %>
       Hello. Here are some products:
     <% end %>

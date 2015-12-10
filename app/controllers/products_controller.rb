@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     set_current_user
     set_current_order
     if @current_user
-      if @current_user.email == "admin"
+      if @current_user.username == "admin"
         redirect_to admin_products_path
       end
     end

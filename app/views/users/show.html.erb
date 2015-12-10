@@ -1,10 +1,13 @@
 <div class="welcome">
   <% if @current_user %>
-    Hello, <span class="greeting"><%=@current_user.email%></span>. Here are your account details:</h1>
+    Hello, <span class="greeting"><%=@current_user.username%></span>. Here are your account details:</h1>
   <% end %>
 </div>
 
 <ul>
+  <li>
+    username: <%= @current_user.username %>
+  </li>
   <li>
     e-mail address: <%= @current_user.email %>
   </li>

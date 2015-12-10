@@ -2,6 +2,9 @@
   <form action="/users" method="POST" class="signup-form">
     <h1>Sign Up</h1>
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <div class="form-group username-group">
+      <input type='text' name="user[username]"  class="form-control" placeholder="username">
+    </div>
     <div class="form-group email-group">
       <input type='text' name="user[email]"  class="form-control" placeholder="e-mail address">
     </div>

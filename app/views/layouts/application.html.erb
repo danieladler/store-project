@@ -27,7 +27,7 @@
             <% if @current_user %>
               <div class="navbar-right">
                 <ul class="nav navbar-nav">
-                  <% if @current_user.email != "admin" %>
+                  <% if @current_user.username != "admin" %>
                     <li><%= link_to  "my cart (#{@current_order.items.count})", user_cart_path(session[:user_id])%></li>
                     <li><%= link_to "my account", user_account_path(session[:user_id]) %></li>
                   <% end %>
@@ -43,7 +43,7 @@
               <div class="navbar-right">
                 <%= form_tag sign_in_path, class:"navbar-form" do %>
                   <div class="form-group">
-                    <input type="email", name="email", placeholder="e-mail", class="form-control">
+                    <input type="username", name="username", placeholder="username", class="form-control">
                   </div>
 
                   <div class="form-group">
