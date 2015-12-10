@@ -4,7 +4,7 @@ body * {
 
 body {
   background-color: rgba(209, 202, 170, 0.85);
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
   font-size: 22px;
   padding-bottom: 70px;
 }
@@ -15,6 +15,12 @@ body a:visited {
 
 body a:link {
   color: black;
+}
+
+// page backgrounds
+
+.bkgd-wrapper-product-index-1 {
+  
 }
 
 // this pushes page content down to fit below fixed header.
