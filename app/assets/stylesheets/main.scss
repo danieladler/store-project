@@ -3,18 +3,20 @@ body * {
 }
 
 body {
-  // background-color: rgba(209, 202, 170, 0.85);
+  background-color: rgb(51, 51, 51);
   font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
   font-size: 22px;
-  padding-bottom: 70px;
+  margin-top: 50px;
 }
 
 body a:visited {
-  color: black;
+  color: #5995ED;
+  // color: rgb(51,51,51);
 }
 
 body a:link {
-  color: black;
+  color: #5995ED;
+  // color: rgb(51,51,51);
 }
 
 body a:hover {
@@ -23,15 +25,39 @@ body a:hover {
 
 // page backgrounds
 
+.page-bkgd-color {
+  background-color: rgb(242,247,249);
+}
+
+
 .bkgd-wrapper-product-index-1 {
   background-color: rgba(125, 175, 196, 0.1);
+}
+
+    // this class is just for product show page:
+    .container-fluid {
+      padding: 0;
+    }
+
+.bkgd-wrapper-product-show-1L {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(21, 173, 230);
+}
+
+.bkgd-wrapper-product-show-1R {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(252, 203, 74);
 }
 
 // this pushes page content down to fit below fixed header.
 
 .page-content {
-  margin-top: 50px;
-  // background-color: rgba(88, 165, 255, 0.4);
+
 }
 
 .flash-notice {
@@ -71,8 +97,7 @@ body a:hover {
 }
 
 .navbar-default {
-  background-color: #5995ED;
-  // min-height: 60px;
+  background-color: #044389;
 }
 
 .navbar-brand {
@@ -104,11 +129,11 @@ body a:hover {
 // footer on each page
 
 .footer {
-  // position: absolute;
-  // bottom: 0;
+  position: relative;
+  bottom: 0;
   width: 100%;
   height: 140px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(51, 51, 51);
   padding-top: 60px;
 }
 
@@ -175,7 +200,12 @@ body a:hover {
   padding: 30px 0 30px 0;
 }
 
+.product-left {
+  // background-color: #044389;
+}
+
 .product-right {
+  // background-color: rgb(222, 177, 120);
   height: 640px;
 }
 
