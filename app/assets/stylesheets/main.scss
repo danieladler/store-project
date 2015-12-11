@@ -3,7 +3,7 @@ body * {
 }
 
 body {
-  background-color: rgba(209, 202, 170, 0.85);
+  // background-color: rgba(209, 202, 170, 0.85);
   font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
   font-size: 22px;
   padding-bottom: 70px;
@@ -17,10 +17,14 @@ body a:link {
   color: black;
 }
 
+body a:hover {
+  color: #FFAD05;
+}
+
 // page backgrounds
 
 .bkgd-wrapper-product-index-1 {
-
+  background-color: rgba(125, 175, 196, 0.1);
 }
 
 // this pushes page content down to fit below fixed header.
@@ -38,14 +42,43 @@ body a:link {
 
 // header and all its contents
 
+.navbar a:link {
+  color: white;
+}
+
+.navbar a:visited {
+  color: white;
+}
+
+.navbar-header a:hover {
+  color: #FFAD05;
+}
+
+.navbar-default a.navbar-brand:hover {
+  color: #FFAD05;
+}
+
+.navbar .navbar-right li a:link {
+  color: white;
+}
+
+.navbar .navbar-right li a:visited {
+  color: white;
+}
+
+.navbar .navbar-right li a:hover {
+  color: #FFAD05;
+}
+
 .navbar-default {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #5995ED;
   // min-height: 60px;
 }
 
 .navbar-brand {
   font-size: 24px;
   font-weight: 600;
+  color: red;
 }
 
   .header .logo {
@@ -92,7 +125,6 @@ body a:link {
 }
 
 .greeting {
-  color: white;
   font-size: 80px;
   font-weight: 800;
   text-align: left;
@@ -103,6 +135,7 @@ body a:link {
   left: 13px;
   line-height: 90px;
   font-size: 100px;
+  color: #5995ED;
 }
 
 .welcome {
@@ -112,7 +145,7 @@ body a:link {
 }
 
 .user-name {
-  color: white;
+  color: #5995ED;
 }
 
 // display for all products on homepage
@@ -151,7 +184,7 @@ body a:link {
 }
 
 .product-description-container {
-  border-top: 1px solid white;
+  border-top: 1px solid black;
   padding: 30px 0 30px 15px;
 }
 
@@ -161,7 +194,7 @@ body a:link {
 }
 
 .product-options-container {
-  border-top: 1px solid white;
+  border-top: 1px solid black;
   padding: 30px 0 30px 15px;
 }
 
@@ -177,7 +210,7 @@ body a:link {
 .prev-next-product {
   text-align: center;
   font-weight: bold;
-  border-top: 1px solid white;
+  border-top: 1px solid black;
   padding: 20px 0;
 }
 
@@ -202,7 +235,7 @@ body a:link {
 // cart page
 
 .cart-item-block {
-  border: 1px solid white;
+  border: 1px solid black;
   margin: 10px 0;
   padding: 30px 0;
   font-size: 28px;
@@ -290,7 +323,7 @@ table th, td {
   padding-top: 40px;
   text-align: center;
   font-size: 32px;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
 // /admin/orders table
