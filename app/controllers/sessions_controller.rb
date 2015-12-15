@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to home_path
     else
-      redirect_to home_path
+      redirect_to home_path, notice: "Wrong username or password"
     end
   end
 

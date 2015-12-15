@@ -8,8 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
     <nav class="navbar navbar-default navbar-fixed-top">
+    <% if flash[:notice] %>
+      <div class='alert alert-danger wrong-sign-in'>
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
       <div class="container">
         <div class="navbar-header">
           <%= link_to "BrandName", home_path, class:"navbar-brand" %>
@@ -57,11 +61,9 @@
 
                   <input type="submit", value="Sign In", class="btn btn-md btn-primary">
 
-                    <button class="btn btn-success btn-md create-account"><%= link_to "Create Account", sign_up_path %></button>
+                  <button class="btn btn-success btn-md create-account"><%= link_to "Create Account", sign_up_path %></button>
                 <% end %>
               </div>
-
-
             <% end %>
         </div>
       </div>
