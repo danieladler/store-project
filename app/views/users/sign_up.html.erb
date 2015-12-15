@@ -20,3 +20,15 @@
     </form>
   </div>
 </div>
+
+<% if @user %>
+  <% if @user.errors.any? %>
+    <% @user.errors.each do |column, message| %>
+      <ul>
+        <li>
+          <strong><%= column.capitalize %>:</strong> <%= message %>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+<% end %>

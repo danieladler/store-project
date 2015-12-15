@@ -10,7 +10,7 @@ class ProductOptionsController < ApplicationController
     else
       # not sure about this part
       @product_options            = ProductOption.all
-      render :products
+      render :edit_view(params[:product_id])
     end
   end
 

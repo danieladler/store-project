@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get  "/sign-up"                  , to: "users#sign_up"
+  get  "/sign-up"                  , to: "users#sign_up"    , as: :sign_up
   post "/users"                    , to: "users#create"
   get  "/users/:user_id/account"   , to: "users#show"       , as: :user_account
 
