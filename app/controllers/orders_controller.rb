@@ -24,9 +24,17 @@ class OrdersController < ApplicationController
     @current_order.name             = params[:order][:name]
     @current_order.shipping_address = params[:order][:shipping_address]
     @current_order.status           = "paid"
-    @current_order.save
-    session.delete(:order_id)
-    redirect_to order_confirm_path(params[:order_id]), notice: "Your order has been placed!"
+    # raise
+    if @current_order.name.empty? || @current_order.shipping_address.empty?
+      render checkout_path(session[:user_id]), notice: "Include both name and address to complete checkout"
+    else
+      if @current_order.save
+        session.delete(:order_id)
+        redirect_to order_confirm_path(params[:order_id]), notice: "Your order has been placed!"
+      else
+        render :checkout
+      end
+    end
   end
 
   def confirm

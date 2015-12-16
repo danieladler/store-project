@@ -1,9 +1,6 @@
 class Order < ActiveRecord::Base
-
   has_many :items
   belongs_to :user
-
-  # validates:
 
   def calculate_total
     total_order_cost = 0
