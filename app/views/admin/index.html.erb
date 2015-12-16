@@ -22,7 +22,7 @@
             <th><%= p.name %></th>
             <td><%= p.description %></td>
             <% if p.product_options.any? %>
-              <td><strong>Price:</strong> <%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents.to_f/100.to_f))%></td>
+              <td><strong>Price:</strong> <%= p.standard_price %></td>
             <% else %>
               <td> Price TBD </td>
             <% end %>

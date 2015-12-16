@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
     @item.quantity          = 1
     @item.save
     if session[:user_id]
-      redirect_to user_cart_path(session[:user_id]), notice: "Your order has been placed!"
+      redirect_to user_cart_path(session[:user_id])
     else
       redirect_to home_path
     end

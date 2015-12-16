@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
     @current_order.status           = "paid"
     @current_order.save
     session.delete(:order_id)
-    redirect_to order_confirm_path(params[:order_id])
+    redirect_to order_confirm_path(params[:order_id]), notice: "Your order has been placed!"
   end
 
   def confirm

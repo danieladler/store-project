@@ -20,7 +20,7 @@
                 <div class="index-product-details">
                   <h2 class="product-name"><%= link_to p.name, show_product_path(p.id) %></h2>
                   <% if p.product_options.any? %>
-                    $<%= sprintf('%.2f', (p.product_options.find_by(name:"standard price").price_in_cents/100))%>
+                    $<%= p.standard_price%>
                   <% else %>
                     <h4> Price TBD </h4>
                   <% end %>

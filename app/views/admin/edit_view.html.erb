@@ -41,10 +41,20 @@
                       </div>
                       <%= p.submit        id: :submit_product_option%>
                     <% end %>
+                    <% if @product_option.errors.any? %>
+                      <% @product_option.errors.each do |column, message| %>
+                        <ul>
+                          <li>
+                            <strong><%= column.capitalize %>:</strong> <%= message %>
+                          </li>
+                        </ul>
+                      <% end %>
+                    <% end %>
                   </div>
                 </ul>
               </div>
             </div>
+
           </div>
         </div>
   </div>

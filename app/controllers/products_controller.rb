@@ -33,6 +33,8 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    set_current_user
+    set_current_order
     @product             = Product.find(params[:product_id])
     @product.name        = params[:product][:name]
     @product.description = params[:product][:description]
