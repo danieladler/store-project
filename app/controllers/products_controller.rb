@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
     @product.name          = params[:product][:name]
     @product.description   = params[:product][:description]
     if @product.save
-      redirect_to admin_products_path
+      redirect_to edit_view_path(@product.id)
     else
       @products            = Product.all
       render :products
