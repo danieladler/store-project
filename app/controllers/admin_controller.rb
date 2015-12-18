@@ -18,6 +18,7 @@ class AdminController < ApplicationController
   end
 
   def edit
+    set_current_user
     @product              = Product.find(params[:product_id])
     @product.name         = params[:product][:name]
     @product.description  = params[:product][:description]

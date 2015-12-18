@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
     <% if flash[:notice] %>
-      <div class='alert alert-danger wrong-sign-in'>
+      <div class='alert alert-warning wrong-sign-in'>
         <%= flash[:notice] %>
       </div>
     <% end %>
@@ -73,11 +73,11 @@
       <%= yield %>
     </div>
 
-      <footer class="footer">
+      <!-- <footer class="footer">
         <div class="container">
           <p class="text-muted">footer content will go here</p>
         </div>
-      </footer>
+      </footer> -->
 
 </body>
 </html>

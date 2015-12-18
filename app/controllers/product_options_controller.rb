@@ -8,14 +8,14 @@ class ProductOptionsController < ApplicationController
     if @product_option.save
       redirect_to edit_view_path
     else
-      raise
-      # @product_options            = ProductOption.all
-      render "/admin/products/#{params[:product_id]}"
+      @product                       = Product.find(params[:product_id])
+      set_current_user
+      render "admin/edit_view"
     end
   end
 
   def edit
-    @product_option              = ProductOptionfind(params[:product_option_id])
+    @product_option              = ProductOption.find(params[:product_option_id])
     @product_option.name             = params[:product_option][:name]
     @product_option.price_in_cents   = params[:product_option][:price_in_cents]
     @product_option.product_id       = params[:product_option][:product_id]
