@@ -291,10 +291,23 @@ body a:hover {
 
 .cart-item-block li {
   list-style-type: none;
+  text-align: right;
+}
+
+.cart-item-block li:nth-child(1) {
+  // padding-left: 0;
 }
 
 .cart-item-block li:nth-child(2) {
   font-weight: 600;
+}
+
+.cart-item-name {
+  font-size: 32px;
+}
+
+.cart-item-block li.cart-item-name {
+  text-align: left;
 }
 
 .cart-item-image img {
