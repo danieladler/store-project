@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
   def calculate_total
     total_order_cost = 0
     self.items.each do |i|
-      total_order_cost += i.price
+      total_order_cost += (i.price * i.quantity)
     end
     total_order_cost
   end

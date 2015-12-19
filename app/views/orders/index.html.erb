@@ -25,7 +25,11 @@
           <td><strong><%= link_to o.id, order_confirm_path(o.id) %></strong></td>
           <td><%= o.name %></td>
           <td><%= o.shipping_address %></td>
-          <td>$<%= sprintf('%.2f', (o.total/100)) %></td>
+          <% if o.total %>
+            <td>$<%= sprintf('%.2f', (o.total/100)) %></td>
+          <% else %>
+            <td>in process</td>
+          <% end %>
           <td><%= o.status %></td>
           <td>
             <form action="/admin/orders/<%=o.id%>/ship-confirm" method="POST">

@@ -258,12 +258,25 @@ body a:hover {
 
 // product edit page
 
+.product-container {
+  display: block;
+}
+
+.edit-container {
+  display: block;
+  // margin-top: 30px;
+}
+
 .edit-product-attrs {
-  padding-top: 20px;
+  // padding-top: 20px;
 }
 
 .add-option-toggler {
   font-weight: 600;
+}
+
+.delete-product {
+  margin-bottom: 20px;
 }
 
 
@@ -272,7 +285,7 @@ body a:hover {
 .cart-item-block {
   border: 1px solid black;
   margin: 10px 0;
-  padding: 30px 0;
+  padding: 30px 10px 10px 10px;
   font-size: 28px;
 }
 
@@ -287,6 +300,11 @@ body a:hover {
 .cart-item-image img {
   position: relative;
   width: 100%;
+}
+
+.delete-item {
+  padding-top: 10px;
+  margin-bottom: 0;
 }
 
 .empty-cart-message {
@@ -304,6 +322,7 @@ body a:hover {
 .cart-next-options {
   text-align: center;
   margin: 20px 0;
+  padding-bottom: 20px;
 }
 
 .cart-next-options li {
@@ -355,10 +374,16 @@ table th, td {
 }
 
 .add-product {
-  padding-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
   font-size: 32px;
+  font-weight: bold;
   border: 1px solid black;
+}
+
+.add-product button>a {
+  color: black;
 }
 
 // /admin/orders table

@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   def cart
     set_current_user
     set_current_order
+    # raise
     @current_order.total = @current_order.calculate_total
     @current_order.save
   end
