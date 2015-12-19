@@ -14,21 +14,30 @@
           <ul class="col-lg-10 col-lg-push-1 cart-item-block">
 
           <div class="row">
-            <li class="col-lg-4 cart-item-image"><%= link_to image_tag(i.product_option.product.small_image_url), show_product_path(i.product_option.product.id)  %></li>
-            <li class="col-lg-2 cart-item-name" ><%= link_to i.product_option.product.name, show_product_path(i.product_option.product.id) %>  </li>
-            <li class="col-lg-2 cart-item-price"><%= "#{i.product_option.name}: "%><br>$<%= sprintf('%.2f', (i.price/100)) %></li>
-            <li class="col-lg-2 cart-item-qty"  >Quantity in cart:<br> <%= i.quantity %>   </li>
-            <li class="col-lg-2 cart-item-subtotal" >Subtotal:<br>$<%= sprintf('%.2f', (i.price/100) * i.quantity) %>   </li>
+            <div class="col-lg-4 cart-item-container">
+              <li class="col-lg-12 cart-item-image"><%= link_to image_tag(i.product_option.product.small_image_url), show_product_path(i.product_option.product.id)  %></li>
+            </div>
+            <div class="col-lg-8 cart-details-container">
+              <div class="row">
+                <li class="col-lg-3 cart-item-name" ><%= link_to i.product_option.product.name, show_product_path(i.product_option.product.id) %>  </li>
+                <li class="col-lg-3 cart-item-price"><%= "#{i.product_option.name}: "%><br>$<%= sprintf('%.2f', (i.price/100)) %></li>
+                <li class="col-lg-3 cart-item-qty"  >Quantity in cart:<br> <%= i.quantity %>   </li>
+                <li class="col-lg-3 cart-item-subtotal" >Subtotal:<br>$<%= sprintf('%.2f', (i.price/100) * i.quantity) %>   </li>
+              </div>
+              <div class="remove-item">
+                <div class="row">
+                  <li>
+                    <form action="/items/<%=i.id%>" method="POST">
+                      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                      <input type="hidden" name="_method" value="DELETE">
+                      <input type="submit" class="remove-item-button btn btn-danger col-lg-4" value="Remove From Cart" data-confirm:"Are you sure?">
+                    </form>
+                  </li>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <li class="delete-item">
-              <form action="/items/<%=i.id%>" method="POST">
-                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" class="btn btn-danger col-lg-2 col-lg-push-9" value="Remove From Cart" data-confirm:"Are you sure?">
-              </form>
-            </li>
-          </div>
+
         </div>
         </ul>
       <% end  %>

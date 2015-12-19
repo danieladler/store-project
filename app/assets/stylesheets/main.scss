@@ -319,9 +319,17 @@ body a:hover {
   font-weight: bold;
 }
 
-.delete-item {
-  padding-top: 10px;
-  margin-bottom: 0;
+.remove-item-button {
+  position: relative;
+  float: right;
+  margin-right: 20px;
+}
+
+.remove-item {
+  // position: relative;
+  // bottom: 0;
+  margin-top: 150px;
+  // margin-left: 150px;
 }
 
 .empty-cart-message {
