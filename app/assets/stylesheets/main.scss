@@ -285,8 +285,8 @@ body a:hover {
 .cart-item-block {
   border: 1px solid black;
   margin: 10px 0;
-  padding: 30px 10px 10px 10px;
-  font-size: 28px;
+  padding: 20px 10px 20px 10px;
+  font-size: 18px;
 }
 
 .cart-item-block li {
@@ -300,6 +300,10 @@ body a:hover {
 .cart-item-image img {
   position: relative;
   width: 100%;
+}
+
+.cart-item-subtotal {
+  font-weight: bold;
 }
 
 .delete-item {
