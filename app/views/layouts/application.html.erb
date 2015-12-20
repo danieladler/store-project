@@ -38,7 +38,7 @@
                       <li><%= link_to  "my cart (0)", user_cart_path(session[:user_id])%></li>
                       <li><%= link_to "my account", user_account_path(session[:user_id]) %></li>
                     <% else %>
-                      <li><%= link_to  "my cart (#{@current_order.items.count})", user_cart_path(session[:user_id])%></li>
+                      <li><%= link_to  "my cart (#{@current_order.calculate_total_items})", user_cart_path(session[:user_id])%></li>
                       <li><%= link_to "my account", user_account_path(session[:user_id]) %></li>
                     <% end %>
                   <% end %>

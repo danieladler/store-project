@@ -27,6 +27,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit_quantity
+    @item             = Item.find(params[:item_id])
+    @item.quantity    = params[:item][:quantity]
+    @item.save
+    redirect_to user_cart_path(session[:user_id])
+  end
+
   def remove_from_cart
     @item = Item.find(params[:item_id])
     @item.destroy

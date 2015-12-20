@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get "/orders/:order_id/"             , to: "orders#confirm"     , as: :order_confirm
 
   post "/items"                    , to: "items#add_to_cart"     , as: :new_item
+  patch "/items/:item_id"          , to: "items#edit_quantity"   , as: :edit_qty
   delete "/items/:item_id"         , to: "items#remove_from_cart", as: :delete_item
 
   # The priority is based upon order of creation: first created -> highest priority.

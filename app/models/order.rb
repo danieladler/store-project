@@ -10,6 +10,14 @@ class Order < ActiveRecord::Base
     total_order_cost
   end
 
+  def calculate_total_items
+    total_items = 0
+    self.items.each do |i|
+      total_items += i.quantity
+    end
+    total_items
+  end
+
   def purchased_date
     self.updated_at.localtime.strftime("%B %e, %Y")
   end

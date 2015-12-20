@@ -304,12 +304,12 @@ body a:hover {
 }
 
 .cart-item-name-container {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .cart-item-name a {
-  font-size: 32px;
   font-weight: bold;
+  font-size: 32px;
 }
 
 .cart-item-block li.cart-item-name {
@@ -317,11 +317,11 @@ body a:hover {
 }
 
 .item-price-qty-container {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .item-subtotal-container {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .cart-item-subtotal {
@@ -350,7 +350,7 @@ body a:hover {
   font-size: 26px;
 }
 
-.cart-next-options {
+.cart-next-options-container {
   text-align: center;
   margin: 20px 0;
   padding-bottom: 20px;
