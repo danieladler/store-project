@@ -1,13 +1,17 @@
 <div class='container page-content'>
-  <div class="welcome">
-    <% if @current_user %>
-      Hello, <span class="user-name"><%=@current_user.username%></span>. Here is your cart:</h1>
-    <% end %>
+  <div class="row">
+    <div class="welcome col-sm-12">
+      <% if @current_user %>
+        Hello, <span class="user-name"><%=@current_user.username%></span>. Here is your cart:</h1>
+      <% end %>
+    </div>
   </div>
 
   <div class="row all-cart-items-container">
     <% if @current_order.items.count == 0 %>
-      <span class="col-lg-12 empty-cart-message">Your cart is empty. Go buy something!</span>
+      <div class="row">
+        <div class="col-sm-12 empty-cart-message">Your cart is empty. Go buy something!</div>
+      </div>
     <% else %>
       <% @current_order.items.sort_by {|i| i.id}.each do |i| %>
         <div class="row item-block-container">

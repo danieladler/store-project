@@ -1,25 +1,29 @@
 <div class='container page-content'>
-  <div class="welcome">
-    <% if @current_user %>
-      Hello, <span class="user-name"><%=@current_user.username%></span>. Here are your account details:</h1>
-    <% end %>
-  </div>
-
-  <ul>
-    <li>
-      username: <%= @current_user.username %>
-    </li>
-    <li>
-      e-mail address: <%= @current_user.email %>
-    </li>
-    <li>
-      account created at: <%= @current_user.created_at.localtime.strftime("%B %e, %Y %I:%M:%S %p %Z") %>
-    </li>
-    <li>Order history:</li>
-      <% @current_user.orders.sort.each do |o| %>
-      <ul>
-        <li> <%= link_to "#{o.purchased_date}, #{o.purchased_time}", order_confirm_path(o.id) %> </li>
-      </ul>
+  <div class="row">
+    <div class="welcome">
+      <% if @current_user %>
+        Hello, <span class="user-name"><%=@current_user.username%></span>. Here is your account:</h1>
       <% end %>
-  </ul>
+    </div>
+
+    <div class="col-sm-12">
+      <ul class="user-account-details">
+        <li>
+          <strong>username:</strong> <%= @current_user.username %>
+        </li>
+        <li>
+          <strong>e-mail address:</strong> <%= @current_user.email %>
+        </li>
+        <li>
+          <strong>account created at:</strong> <%= @current_user.created_at.localtime.strftime("%B %e, %Y %I:%M:%S %p %Z") %>
+        </li>
+        <strong><li>Order history:</li></strong>
+          <% @current_user.orders.sort.each do |o| %>
+          <ul class="past-orders">
+            <li> <%= link_to "#{o.purchased_date}, #{o.purchased_time}", order_confirm_path(o.id) %> </li>
+          </ul>
+          <% end %>
+      </ul>
+    </div>
+  </div>
 </div>

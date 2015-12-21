@@ -384,6 +384,20 @@ body a:hover {
   margin-bottom: 6px;
 }
 
+// user account page
+
+.user-account-details {
+  padding-left: 0;
+}
+
+.user-account-details li {
+  list-style-type: none;
+}
+
+.past-orders li {
+  padding-bottom: 4px;
+}
+
 // /admin/products table
 table {
   padding: 20px 0 20px 30px;
