@@ -24,7 +24,7 @@
                 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
                 <select class="form-control product-options" name="selector">
                   <% @product.product_options.each do |o| %>
-                    <option value="<%=o.id%>"><%=o.name%>: $<%= sprintf('%.2f', (o.price_in_cents/100))%></option>
+                    <option value="<%=o.id%>"><%=o.name%>: $<%= sprintf('%.2f', (o.price_in_cents/100.to_f))%></option>
                   <% end %>
                 </select>
 

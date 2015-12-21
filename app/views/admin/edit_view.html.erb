@@ -23,7 +23,7 @@
               <ul>
                 <% if @product.product_options.any? %>
                   <% @product.product_options.each do |o| %>
-                    <li><%=o.name%>:<%= sprintf('%.2f', (o.price_in_cents/100))%></li>
+                    <li><%=o.name%>:<%= sprintf('%.2f', (o.price_in_cents/100.to_f))%></li>
                   <% end %>
                 <% else %>
                   <li> Price TBD </li>

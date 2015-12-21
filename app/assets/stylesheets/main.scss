@@ -250,10 +250,7 @@ body a:hover {
 }
 
 .add-to-cart {
-  position: absolute;
-  bottom: 0;
-  left: 44px;
-  width: 88%;
+  margin-top: 10px;
 }
 
 // product edit page
@@ -328,6 +325,10 @@ body a:hover {
   font-weight: bold;
 }
 
+.update-qty-button {
+  margin-top: 10px;
+}
+
 .remove-item {
   margin-top: 200px;
 }
@@ -356,14 +357,30 @@ body a:hover {
   padding-bottom: 20px;
 }
 
-.cart-next-options li {
-  list-style-type: none;
-  padding: 2px 2px;
+.cart-next-options-container button>a{
+  color: white;
 }
+
 
 // checkout page
 
+.order-details-container {
+  font-size: 28px;
+}
 
+.add-order-details {
+  margin: 10px 0;
+}
+
+.add-order-details * {
+  margin-bottom: 10px;
+}
+
+// order confirm page
+
+.thank-you {
+  text-align: center;
+}
 
 // sign-up page
 
