@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def sign_up
-    # set_current_user
+
   end
 
 
@@ -17,8 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    # set_current_user
-    # set_current_order
+    
   end
 
 end

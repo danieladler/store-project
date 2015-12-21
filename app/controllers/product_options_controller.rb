@@ -9,7 +9,6 @@ class ProductOptionsController < ApplicationController
       redirect_to edit_view_path
     else
       @product                       = Product.find(params[:product_id])
-      # set_current_user
       render "admin/edit_view"
     end
   end
@@ -29,7 +28,7 @@ class ProductOptionsController < ApplicationController
   end
 
   def delete
-    @product_option                = ProductOptionfind(params[:product_option_id])
+    @product_option                = ProductOption.find(params[:product_option_id])
     @product_option.destroy
     redirect_to admin_products_path
   end

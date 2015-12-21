@@ -249,6 +249,11 @@ body a:hover {
   display: block;
 }
 
+.product-option-list li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+
 .add-option-toggler {
   font-weight: 600;
 }

@@ -1,20 +1,15 @@
 class ProductsController < ApplicationController
 
   def index
-    # set_current_user
-    # set_current_order
     if @current_user
       if @current_user.username == "admin"
         redirect_to admin_products_path
       end
     end
-
     @products      = Product.all
   end
 
   def show
-    # set_current_user
-    # set_current_order
     @product         = Product.find(params[:product_id])
     @product_options = Product.find(params[:product_id]).product_options.all
     @product_option  = ProductOption.new
@@ -33,8 +28,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    # set_current_user
-    # set_current_order
     @product             = Product.find(params[:product_id])
     @product.name        = params[:product][:name]
     @product.description = params[:product][:description]
@@ -47,14 +40,6 @@ class ProductsController < ApplicationController
     @product       = Product.find(params[:product_id])
     @product.destroy
     redirect_to admin_products_path
-  end
-
-  def price
-
-  end
-
-  def formatted_price
-
   end
 
 end

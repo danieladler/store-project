@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   post   "/products/:product_id"   , to: "product_options#add"     , as: :product_options
   patch  "/products/:product_id"   , to: "product_options#edit"    , as: :edit_option
-  delete "/products/:product_id"   , to: "product_options#delete"  , as: :delete_option
+  delete "/product_options/:product_option_id", to: "product_options#delete"  , as: :delete_option
 
   get "/admin/orders"                  , to: "orders#index"       , as: :orders
   patch "/admin/orders/:order_id/ship-confirm"   , to: "orders#ship_confirm", as: :ship_confirm

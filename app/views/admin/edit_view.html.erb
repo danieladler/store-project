@@ -20,10 +20,23 @@
           <div class="col-lg-12 product-options-container">
             <span class="attr-name">Options:</span>
             <div class="product-options">
-              <ul>
+              <ul class="product-option-list">
                 <% if @product.product_options.any? %>
                   <% @product.product_options.each do |o| %>
-                    <li><%=o.name%>:<%= sprintf('%.2f', (o.price_in_cents/100.to_f))%></li>
+                      <li>
+                        <div class="row">
+                          <div class="col-sm-9">
+                            ~ <%=o.name%>: $<%= sprintf('%.2f', (o.price_in_cents/100.to_f))%>
+                          </div>
+                          <div class="col-sm-3">
+                            <form action="/product_options/<%=o.id%>" method="POST">
+                              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                              <input type="hidden" name="_method" value="DELETE">
+                              <input type="submit" class="btn btn-sm btn-danger" value="Delete" data-confirm:"Are you sure?">
+                            </form>
+                          </div>
+                        </div>
+                      </li>
                   <% end %>
                 <% else %>
                   <li> Price TBD </li>
@@ -72,7 +85,7 @@
             <br>
             <label for="product[image_url]">Image URL:</label>
             <input type="text"   name="product[image_url]", value="<%=@product.image_url%>">
-            <input type="submit" value="Update">
+            <input type="submit" class="btn btn-md btn-success" value="Update" >
           </form>
         </div>
     </div>
@@ -82,7 +95,7 @@
         <form action="/products/<%=@product.id%>" method="POST">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
           <input type="hidden" name="_method" value="DELETE">
-          <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
+          <input type="submit" class="btn btn-md btn-danger" value="Delete" data-confirm:"Are you sure?">
         </form>
       </div>
     </div>
