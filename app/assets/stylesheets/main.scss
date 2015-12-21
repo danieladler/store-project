@@ -11,12 +11,10 @@ body {
 
 body a:visited {
   color: #5995ED;
-  // color: rgb(51,51,51);
 }
 
 body a:link {
   color: #5995ED;
-  // color: rgb(51,51,51);
 }
 
 body a:hover {
@@ -106,14 +104,6 @@ body a:hover {
   color: red;
 }
 
-  .header .logo {
-    // position: relative;
-    // display: inline-block;
-    // height: 68px;
-    // width: 68px;
-    // margin: 10px 0 10px 0;
-  }
-
   .create-account a:link {
     color: white;
   }
@@ -133,19 +123,19 @@ body a:hover {
 
 // footer on each page
 
-.footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 140px;
-  background-color: rgb(51, 51, 51);
-  padding-top: 60px;
-}
-
-.footer .text-muted {
-  text-align: center;
-  font-size: 14px;
-}
+// .footer {
+//   position: relative;
+//   bottom: 0;
+//   width: 100%;
+//   height: 140px;
+//   background-color: rgb(51, 51, 51);
+//   padding-top: 60px;
+// }
+//
+// .footer .text-muted {
+//   text-align: center;
+//   font-size: 14px;
+// }
 
 // welcome note at top of each page (below header)
 
@@ -186,6 +176,7 @@ body a:hover {
 
 .index-product-block img {
   width: 100%;
+  border-radius: 6px;
 }
 
 .index-product-details {
@@ -205,12 +196,7 @@ body a:hover {
   padding: 30px 0 30px 0;
 }
 
-.product-left {
-  // background-color: #044389;
-}
-
 .product-right {
-  // background-color: rgb(222, 177, 120);
   height: 640px;
 }
 
@@ -261,11 +247,6 @@ body a:hover {
 
 .edit-container {
   display: block;
-  // margin-top: 30px;
-}
-
-.edit-product-attrs {
-  // padding-top: 20px;
 }
 
 .add-option-toggler {
