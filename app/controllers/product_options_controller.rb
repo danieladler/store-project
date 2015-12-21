@@ -9,7 +9,7 @@ class ProductOptionsController < ApplicationController
       redirect_to edit_view_path
     else
       @product                       = Product.find(params[:product_id])
-      set_current_user
+      # set_current_user
       render "admin/edit_view"
     end
   end

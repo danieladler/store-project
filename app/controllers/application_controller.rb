@@ -20,4 +20,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  before_action :set_current_user
+  before_action :set_current_order
 end

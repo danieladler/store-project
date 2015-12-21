@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
   def add_to_cart
-    set_current_user
-    set_current_order
+    # set_current_user
+    # set_current_order
       # test if the order already contains one (or more) of this item *with this product option id*
       if @current_order.items.exists?(product_option_id: params[:selector])
           # if so, grab the item object with the matching product option id
