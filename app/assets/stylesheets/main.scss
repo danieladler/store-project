@@ -2,6 +2,10 @@ body * {
   // border: 1px solid yellow;
 }
 
+html {
+  background-color: rgb(242,247,249);
+}
+
 body {
   background-color: rgb(51, 51, 51);
   font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
@@ -28,29 +32,29 @@ body a:hover {
 }
 
 
-.bkgd-wrapper-product-index-1 {
-  background-color: rgba(125, 175, 196, 0.1);
-}
+// .bkgd-wrapper-product-index-1 {
+//   background-color: rgba(125, 175, 196, 0.1);
+// }
+//
+//     // this class is just for product show page:
+//     .container-fluid {
+//       padding: 0;
+//     }
 
-    // this class is just for product show page:
-    .container-fluid {
-      padding: 0;
-    }
-
-.bkgd-wrapper-product-show-1L {
-  display: inline-block;
-  float: left;
-  width: 50%;
-  height: 100%;
-  background-color: rgb(21, 173, 230);
-}
-
-.bkgd-wrapper-product-show-1R {
-  display: inline-block;
-  width: 50%;
-  height: 100%;
-  background-color: rgb(252, 203, 74);
-}
+// .bkgd-wrapper-product-show-1L {
+//   display: inline-block;
+//   float: left;
+//   width: 50%;
+//   height: 100%;
+//   background-color: rgb(21, 173, 230);
+// }
+//
+// .bkgd-wrapper-product-show-1R {
+//   display: inline-block;
+//   width: 50%;
+//   height: 100%;
+//   background-color: rgb(252, 203, 74);
+// }
 
 // this pushes page content down to fit below fixed header.
 

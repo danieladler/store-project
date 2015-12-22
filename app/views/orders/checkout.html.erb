@@ -1,28 +1,28 @@
 <div class='container page-content'>
-  <div class="welcome">
-    <% if @current_user %>
-      Hello, <span class="user-name"><%=@current_user.username%></span>. Finalize your order:</h1>
-    <% end %>
-  </div>
-
-  <div class="order-details-container">
-    <div class="order-final-cost col-lg-10">
-      <strong>Total:</strong> $<%= sprintf('%.2f', (@current_order.total/100.to_f)) %>
+  <div class="row">
+    <div class="welcome">
+      <% if @current_user %>
+        Hello, <span class="user-name"><%=@current_user.username%></span>. Finalize your order:</h1>
+      <% end %>
     </div>
-    <div class="add-order-details col-lg-10">
-      <form action="/orders/<%=@current_order.id%>" method="POST">
-          <input type="hidden" name="authenticity_token"   value="<%= form_authenticity_token %>" />
-          <input type="hidden" name="_method"              value="PATCH">
-          <label for="order[shipping_address]">Shipping Address:</label>
-          <input type="text"   name="order[shipping_address]">
-          <br>
-          <label for="order[name]">Name:</label>
-          <input type="text"   name="order[name]">
-          <br>
-          <input type="submit" value="Submit Order" class="btn btn-lg btn-success">
-      </form>
+
+    <div class="order-details-container">
+      <div class="order-final-cost col-lg-10">
+        <strong>Total:</strong> $<%= sprintf('%.2f', (@current_order.total/100.to_f)) %>
+      </div>
+      <div class="add-order-details col-lg-10">
+        <form action="/orders/<%=@current_order.id%>" method="POST">
+            <input type="hidden" name="authenticity_token"   value="<%= form_authenticity_token %>" />
+            <input type="hidden" name="_method"              value="PATCH">
+            <label for="order[shipping_address]">Shipping Address:</label>
+            <input type="text"   name="order[shipping_address]">
+            <br>
+            <label for="order[name]">Name:</label>
+            <input type="text"   name="order[name]">
+            <br>
+            <input type="submit" value="Submit Order" class="btn btn-lg btn-success">
+        </form>
+      </div>
     </div>
   </div>
-
-
 </div>
