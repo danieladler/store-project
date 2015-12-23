@@ -5,7 +5,7 @@
         <% if @current_user %>
           Hello, <span class="user-name"><%=@current_user.username%></span>. Here are some products:
         <% else %>
-          Hello. Here are some products:
+          <span class="user-name">Hello.</span> Here are some products:
         <% end %>
       </div>
     </div>
@@ -31,9 +31,12 @@
         <% end %>
       </div>
       <div class="col-md-3 site-description">
-        <h2>About this site</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <strong>Secoya Designs</strong> offers a wide array of products for the home. We source our wood locally from furniture makers, cabinet makers, lumber yards and more. All of our wood is either reclaimed lumber or unused scraps that were once considered trash. We focus on using eco-friendly products that help to reduce waste and preserve the environment. All of our products are handmade and unique in their own way. Due to the nature of upcycling, products may vary in grain and finish from those pictured below but we do our best to meet your needs and expectations. Contact us to purchase a product or place an order.
+        </p>
+        <br>
+        <p>
+          We also offer custom designs and projects. Ask us and we'll give you a quote.</p>
         </p>
       </div>
     </div>

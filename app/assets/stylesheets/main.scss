@@ -14,11 +14,11 @@ body {
 }
 
 body a:visited {
-  color: #5995ED;
+  color: #4F6272;
 }
 
 body a:link {
-  color: #5995ED;
+  color: #4F6272;
 }
 
 body a:hover {
@@ -99,13 +99,12 @@ body a:hover {
 }
 
 .navbar-default {
-  background-color: #044389;
+  background-color: #4F6272;
 }
 
 .navbar-brand {
   font-size: 24px;
   font-weight: 600;
-  color: red;
 }
 
   .create-account a:link {
@@ -159,7 +158,7 @@ body a:hover {
   left: 13px;
   line-height: 90px;
   font-size: 100px;
-  color: #5995ED;
+  color: #FFAD05;
 }
 
 .welcome {
@@ -169,7 +168,7 @@ body a:hover {
 }
 
 .user-name {
-  color: #5995ED;
+  color: #FFAD05;
 }
 
 // display for all products on homepage
@@ -189,9 +188,23 @@ body a:hover {
   left: 2px;
 }
 
+.index-product-details a:link, .index-product-details a:visited{
+  color: #e99f03;
+  text-shadow: 1px 0 white;
+}
+
+.index-product-details a:hover {
+  color: #B7C3F3;
+  text-decoration: none;
+}
+
 .product-name {
   font-weight: 600;
   margin-top: 0;
+}
+
+.site-description {
+
 }
 
 // display of products on product-specific page
@@ -206,6 +219,10 @@ body a:hover {
 
 .greeting.product-name {
   padding-bottom: 30px;
+}
+
+.product-image-container img {
+  border-radius: 6px;
 }
 
 .product-description-container {
@@ -279,6 +296,7 @@ body a:hover {
 .cart-item-image img {
   position: relative;
   width: 100%;
+  border-radius: 6px;
 }
 
 .cart-item-block li {

@@ -1,45 +1,50 @@
 <div class='container page-content'>
-  <div class="welcome">
-    <div>
+  <div class="row">
+    <div class="welcome">
       Hello, <span class="user-name">admin</span>. Here are all of the orders:
     </div>
   </div>
+  <div class="row">
+    <div class="col-lg-12 table-container">
 
-  <table class="all-orders">
-    <thead>
-      <tr>
-        <th>Completed at      </th>
-        <th>Order ID          </th>
-        <th>Name              </th>
-        <th>Shipping Address  </th>
-        <th>Total             </th>
-        <th>Status            </th>
-        <th>Shipped           </th>
-      </tr>
-    </thead>
+      <table class="all-orders">
+        <thead>
+          <tr>
+            <th>Completed at      </th>
+            <th>Order ID          </th>
+            <th>Name              </th>
+            <th>Shipping Address  </th>
+            <th>Total             </th>
+            <th>Status            </th>
+            <th>Shipped           </th>
+          </tr>
+        </thead>
 
-    <tbody>
-      <% @orders.sort.reverse.each do |o| %>
-        <tr>
-          <th><%= o.updated_at.localtime.strftime("%m/%d %y, %l:%M%p") %></th>
-          <td><strong><%= link_to o.id, order_confirm_path(o.id) %></strong></td>
-          <td><%= o.name %></td>
-          <td><%= o.shipping_address %></td>
-          <% if o.total %>
-            <td>$<%= sprintf('%.2f', (o.total/100.to_f)) %></td>
-          <% else %>
-            <td>in process</td>
+        <tbody>
+          <% @orders.sort.reverse.each do |o| %>
+            <tr>
+              <th><%= o.updated_at.localtime.strftime("%m/%d %y, %l:%M%p") %></th>
+              <td><strong><%= link_to o.id, order_confirm_path(o.id) %></strong></td>
+              <td><%= o.name %></td>
+              <td><%= o.shipping_address %></td>
+              <% if o.total %>
+                <td>$<%= sprintf('%.2f', (o.total/100.to_f)) %></td>
+              <% else %>
+                <td>in process</td>
+              <% end %>
+              <td><%= o.status %></td>
+              <td>
+                <form action="/admin/orders/<%=o.id%>/ship-confirm" method="POST">
+                    <input type="hidden" name="authenticity_token"   value="<%= form_authenticity_token %>" />
+                    <input type="hidden" name="_method"              value="PATCH">
+                    <button class="btn btn-success btn-md" type="submit">Confirm Shipped</button>
+                </form>
+              </td>
+            </tr>
           <% end %>
-          <td><%= o.status %></td>
-          <td>
-            <form action="/admin/orders/<%=o.id%>/ship-confirm" method="POST">
-                <input type="hidden" name="authenticity_token"   value="<%= form_authenticity_token %>" />
-                <input type="hidden" name="_method"              value="PATCH">
-                <button class="btn btn-success btn-md" type="submit">Confirm Shipped</button>
-            </form>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
 </div>

@@ -4,46 +4,49 @@
         Hello, <span class="user-name">admin</span>. Here are all products:
     </div>
   </div>
-
-  <div class="row table-container">
-    <table class="all-products">
-      <thead>
-        <tr>
-          <th>Name          </th>
-          <th>Description   </th>
-          <th>Price         </th>
-          <th>Edit          </th>
-          <th>Delete        </th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @products.each do |p| %>
+  <div class="row">
+    <div class="table-container col-lg-12">
+      <table class="all-products">
+        <thead>
           <tr>
-            <th><%= p.name %></th>
-            <td><%= p.description %></td>
-            <% if p.product_options.any? %>
-              <td><strong>Price:</strong> <%= p.standard_price %></td>
-            <% else %>
-              <td> Price TBD </td>
-            <% end %>
-            <td>
-              <%= link_to "Edit", edit_view_path(p.id) %>
-            </td>
-            <td>
-              <form action="/products/<%=p.id%>" method="POST">
-                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" class="delete-button" value="Delete" data-confirm:"Are you sure?">
-              </form>
-            </td>
+            <th>Name          </th>
+            <th>Description   </th>
+            <th>Price         </th>
+            <th>Edit          </th>
+            <th>Delete        </th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @products.each do |p| %>
+            <tr>
+              <th><%= p.name %></th>
+              <td><%= p.description %></td>
+              <% if p.product_options.any? %>
+                <td><strong>Price:</strong> <%= p.standard_price %></td>
+              <% else %>
+                <td> Price TBD </td>
+              <% end %>
+              <td>
+                <%= link_to "Edit", edit_view_path(p.id) %>
+              </td>
+              <td>
+                <form action="/products/<%=p.id%>" method="POST">
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                  <input type="hidden" name="_method" value="DELETE">
+                  <input type="submit" class="btn btn-md btn-danger" value="Delete" data-confirm:"Are you sure?">
+                </form>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
+
   <div class="row">
-    <button class="btn btn-lg add-product col-lg-4 col-lg-push-4">
+    <button class="btn btn-lg btn-info add-product col-lg-4 col-lg-push-4">
       <%= link_to "Add new product", new_product_path %>
     </button>
   </div>
