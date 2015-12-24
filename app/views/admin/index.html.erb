@@ -27,7 +27,7 @@
                 <td> Price TBD </td>
               <% end %>
               <td>
-                <%= link_to "Edit", edit_view_path(p.id) %>
+                <button class="btn btn-md btn-info edit-product-button"><%= link_to "Edit", edit_view_path(p.id) %></button>
               </td>
               <td>
                 <form action="/products/<%=p.id%>" method="POST">

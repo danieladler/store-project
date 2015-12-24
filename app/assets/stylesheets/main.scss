@@ -223,6 +223,7 @@ body a:hover {
 
 .product-image-container img {
   border-radius: 6px;
+  width: 100%;
 }
 
 .product-description-container {
@@ -443,17 +444,30 @@ table th, td {
   padding: 0 15px 10px 0;
 }
 
+.edit-product-button>a:link, .edit-product-button>a:hover, .edit-product-button>a:visited {
+  color: white;
+  text-decoration: none;
+}
+
 .add-product {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
   font-size: 32px;
   font-weight: bold;
-  border: 1px solid black;
 }
 
-.add-product button>a {
-  color: black;
+.add-product>a:link {
+  color: white;
+  text-decoration: none;
+}
+
+.add-product>a:visited {
+  color: white;
+}
+
+.add-product>a:hover {
+  color: #FFAD05;
 }
 
 // /admin/orders table
