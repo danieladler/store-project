@@ -1,7 +1,3 @@
-body * {
-  // border: 1px solid yellow;
-}
-
 html {
   background-color: rgb(242,247,249);
 }
@@ -29,37 +25,6 @@ body a:hover {
 
 .page-bkgd-color {
   background-color: rgb(242,247,249);
-}
-
-
-// .bkgd-wrapper-product-index-1 {
-//   background-color: rgba(125, 175, 196, 0.1);
-// }
-//
-//     // this class is just for product show page:
-//     .container-fluid {
-//       padding: 0;
-//     }
-
-// .bkgd-wrapper-product-show-1L {
-//   display: inline-block;
-//   float: left;
-//   width: 50%;
-//   height: 100%;
-//   background-color: rgb(21, 173, 230);
-// }
-//
-// .bkgd-wrapper-product-show-1R {
-//   display: inline-block;
-//   width: 50%;
-//   height: 100%;
-//   background-color: rgb(252, 203, 74);
-// }
-
-// this pushes page content down to fit below fixed header.
-
-.page-content {
-
 }
 
 .flash-notice {
@@ -201,6 +166,7 @@ body a:hover {
 .product-name {
   font-weight: 600;
   margin-top: 0;
+  color: white;
 }
 
 .site-description {
@@ -283,7 +249,6 @@ body a:hover {
 .delete-product {
   margin-bottom: 20px;
 }
-
 
 // cart page
 
@@ -370,7 +335,6 @@ body a:hover {
   color: white;
 }
 
-
 // checkout page
 
 .order-details-container {
@@ -386,6 +350,14 @@ body a:hover {
 }
 
 // order confirm page
+
+.empty-order-message {
+  font-size: 44px;
+  font-weight: 600;
+  margin: 60px 0 120px 15px;
+  text-align: center;
+  color: rgb(255, 81, 56)
+}
 
 .thank-you {
   text-align: center;
@@ -468,10 +440,4 @@ table th, td {
 
 .add-product>a:hover {
   color: #FFAD05;
-}
-
-// /admin/orders table
-
-.all-orders {
-
 }

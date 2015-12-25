@@ -21,9 +21,8 @@ class ProductOptionsController < ApplicationController
     if @product_option.save
       redirect_to edit_view_path
     else
-      # not sure about this part
-      @product_options            = ProductOption.all
-      render :products
+      @product                       = Product.find(params[:product_id])
+      render "admin/edit_view"
     end
   end
 

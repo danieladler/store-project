@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
 
   def checkout
 
-
   end
 
   def finish_checkout

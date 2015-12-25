@@ -1,44 +1,42 @@
-<!-- <div class="bkgd-wrapper-product-index-1"> -->
-  <div class='container page-content'>
-    <div class="row">
-      <div class="col-lg-12 welcome">
-        <% if @current_user %>
-          Hello, <span class="user-name"><%=@current_user.username%></span>. Here are some products:
-        <% else %>
-          <span class="user-name">Hello.</span> Here are some products:
-        <% end %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class = "col-md-9 all-products">
-        <% @products.in_groups_of(3, false).each do |group| %>
-          <div class="row">
-            <% group.each do |p|  %>
-              <div class="col-md-4 index-product-block">
-                <%= link_to image_tag(p.image_url), show_product_path(p.id) %>
-                <div class="index-product-details">
-                  <h2 class="product-name"><%= link_to p.name, show_product_path(p.id) %></h2>
-                  <% if p.standard_price%>
-                    $<%= p.standard_price%>
-                  <% else %>
-                    <h4> Price TBD </h4>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-      <div class="col-md-3 site-description">
-        <p>
-          <strong>Secoya Designs</strong> offers a wide array of products for the home. We source our wood locally from furniture makers, cabinet makers, lumber yards and more. All of our wood is either reclaimed lumber or unused scraps that were once considered trash. We focus on using eco-friendly products that help to reduce waste and preserve the environment. All of our products are handmade and unique in their own way. Due to the nature of upcycling, products may vary in grain and finish from those pictured below but we do our best to meet your needs and expectations. Contact us to purchase a product or place an order.
-        </p>
-        <br>
-        <p>
-          We also offer custom designs and projects. Ask us and we'll give you a quote.</p>
-        </p>
-      </div>
+<div class='container page-content'>
+  <div class="row">
+    <div class="col-lg-12 welcome">
+      <% if @current_user %>
+        Hello, <span class="user-name"><%=@current_user.username%></span>. Here are some products:
+      <% else %>
+        <span class="user-name">Hello.</span> Here are some products:
+      <% end %>
     </div>
   </div>
-<!-- </div> -->
+
+  <div class="row">
+    <div class = "col-md-9 all-products">
+      <% @products.in_groups_of(3, false).each do |group| %>
+        <div class="row">
+          <% group.each do |p|  %>
+            <div class="col-md-4 index-product-block">
+              <%= link_to image_tag(p.image_url), show_product_path(p.id) %>
+              <div class="index-product-details">
+                <h2 class="product-name"><%= link_to p.name, show_product_path(p.id) %></h2>
+                <% if p.standard_price%>
+                  $<%= p.standard_price%>
+                <% else %>
+                  <h4> Price TBD </h4>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-3 site-description">
+      <p>
+        <strong>Secoya Designs</strong> offers a wide array of products for the home. We source our wood locally from furniture makers, cabinet makers, lumber yards and more. All of our wood is either reclaimed lumber or unused scraps that were once considered trash. We focus on using eco-friendly products that help to reduce waste and preserve the environment. All of our products are handmade and unique in their own way. Due to the nature of upcycling, products may vary in grain and finish from those pictured below but we do our best to meet your needs and expectations. Contact us to purchase a product or place an order.
+      </p>
+      <br>
+      <p>
+        We also offer custom designs and projects. Ask us and we'll give you a quote.</p>
+      </p>
+    </div>
+  </div>
+</div>
