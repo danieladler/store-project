@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
 
   def index
+    # REVIEW: Since these two `if`s share one result, they can be on the same
+    #         line combined with `&&`
     if @current_user
       if @current_user.username == "admin"
         redirect_to admin_products_path
@@ -19,6 +21,8 @@ class ProductsController < ApplicationController
     @product               = Product.new
     @product.name          = params[:product][:name]
     @product.description   = params[:product][:description]
+    # REVIEW: The `image_url` isn't being set here, which means that it isn't
+    #         added to the db, and has to be added in the edit page
     if @product.save
       redirect_to edit_view_path(@product.id)
     else
