@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
 
   def sign_in
     @user = User.find_by(username: params[:username])
+    # REVIEW: `.nil?` is helpful. And since the `if` and `else` have the same result
+    #         they could be combined into a single conditional
     if @user == nil
       redirect_to home_path, notice: "Wrong username or password"
     elsif @user.authenticate(params[:password])

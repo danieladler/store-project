@@ -18,6 +18,8 @@ class OrdersController < ApplicationController
     @current_order.name             = params[:order][:name]
     @current_order.shipping_address = params[:order][:shipping_address]
     @current_order.status           = "paid"
+    # REVIEW: These checks would be best as validations, look into conditional
+    #         validations for how to scope it to `paid` orders
     if @current_order.name.empty? || @current_order.shipping_address.empty?
       flash.now[:notice]="Include both name and address to complete checkout"
       @current_order                = Order.find(params[:order_id])
